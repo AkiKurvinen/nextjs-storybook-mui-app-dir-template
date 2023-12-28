@@ -4,6 +4,7 @@
 - TypeScript
 - i18next locale routes
 - Export static site to subfolder 
+- GitHub deploy workflow (App & Storybook)
 
 ## TODO
 
