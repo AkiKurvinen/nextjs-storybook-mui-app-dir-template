@@ -6,7 +6,7 @@ export const FooterBase = ({ t, lng, path = '' }) => {
   return (
     <footer>
       <Trans i18nKey="languageSwitcher" t={t}>
-        Switch from <strong>{{lng}}</strong> to:{' '}
+        Switch from <strong>{{ lng } as unknown as string}</strong> to:{' '}
       </Trans>
       {languages.filter((l) => lng !== l).map((l, index) => {
         return (

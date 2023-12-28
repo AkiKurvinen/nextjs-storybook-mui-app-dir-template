@@ -1,4 +1,12 @@
-# Next.js 13/1413/14 app directory feature in combination with i18next
+# Next.js 14 app directory with i18next, MUI & Storybook
+- Material UI (MUI)
+- Storybook
+- TypeScript
+- i18next locale routes
+- Export static site to subfolder 
+
+*Based on:*
+## Next.js 13/1413/14 app directory feature in combination with i18next
 
 This example shows a basic way to use [i18next](https://www.i18next.com) (and [react-i18next](https://react.i18next.com)) in a [Next.js 13](https://beta.nextjs.org/) app with the new app directory features.
 [next-i18next](https://next.i18next.com) is not needed anymore for this setup.
@@ -54,9 +62,9 @@ i.e.:
     <script>
       var lngDetector = new window.i18nextBrowserLanguageDetector()
       var lng = lngDetector.detect()
-      if (lng.indexOf('it') === 0) window.location.href = '/it/'
-      else if (lng.indexOf('de') === 0) window.location.href = '/de/'
-      else window.location.href = '/en/'
+      if (lng.indexOf('it') === 0) window.location.href = './it/'
+      else if (lng.indexOf('de') === 0) window.location.href = './de/'
+      else window.location.href = './en/'
     </script>
   </body>
 </html>

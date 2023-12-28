@@ -47,7 +47,7 @@ export default async function Page({ params: { lng } }) {
           </Link>
         </div>
       </main>
-      <Footer lng={lng}/>
+      <Footer lng={lng} path={undefined}/>
     </>
   )
 }
