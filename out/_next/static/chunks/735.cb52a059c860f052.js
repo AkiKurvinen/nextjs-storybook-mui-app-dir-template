@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[735],{735:function(e){e.exports=JSON.parse('{"description":"Questo \xe8 un componente non di pagina che richiede il proprio spazio dei nomi","helpLocize":"Con l\'utilizzare <1>locize</1> sostieni direttamente il futuro di <3>i18next</3>.","languageSwitcher":"Passa da <1>{{lng}}</1> a: "}')}}]);

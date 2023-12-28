@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[371],{4371:function(e){e.exports=JSON.parse('{"back-to-home":"Zur\xfcck zur Hauptseite","h1":"Eine zweite client Seite, um das client-seitige i18n zu demonstrieren","title":"Zweite client Seite"}')}}]);

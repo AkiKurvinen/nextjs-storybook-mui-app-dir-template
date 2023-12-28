@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[149],{5149:function(e){e.exports=JSON.parse('{"back-to-home":"Zur\xfcck zur Hauptseite","h1":"Eine zweite Seite, um das Routing zu demonstrieren","title":"Zweite Seite"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[926],{7926:function(e){e.exports=JSON.parse('{"description":"Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert","helpLocize":"Wenn Sie <1>locize</1> einsetzen, unterst\xfctzen Sie direkt die Zukunft von <3>i18next</3>.","languageSwitcher":"Wechseln von <1>{{lng}}</1> nach: "}')}}]);
