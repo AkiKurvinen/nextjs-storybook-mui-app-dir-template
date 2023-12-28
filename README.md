@@ -5,6 +5,26 @@
 - i18next locale routes
 - Export static site to subfolder 
 
+## TODO
+
+- Theme switch toolbar
+- Language switch toolbar
+- MUI theme from tokens
+- Images and SVG
+  - Next/Image component usage
+  - Dynamic path in app by using .env
+  - Also check images on Storybook
+- Storybook
+  - Themes (MUI)
+  - Language switch
+  - Viewports
+  - (Figma designs embed)
+  - (Accessibility addon)
+- Chromatic Story Modes
+  - Themes
+  - Languages
+  - Viewports
+
 *Based on:*
 ## Next.js 13/1413/14 app directory feature in combination with i18next
 
