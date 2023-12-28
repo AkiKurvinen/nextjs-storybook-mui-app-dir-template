@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[365],{6365:function(a){a.exports=JSON.parse('{"back-to-home":"Tornare alla pagina principale","h1":"Una seconda pagina, per dimostrare il routing","title":"Seconda pagina"}')}}]);
