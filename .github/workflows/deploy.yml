@@ -71,6 +71,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Add Storybook
         run: npm run build-storybook -- -o dist/storybook
+      - name: Add Index page
+        run: npm run move-index
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
