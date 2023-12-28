@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { Trans } from 'react-i18next/TransWithoutContext'
 import { languages, fallbackLng } from '../i18n/settings'
 import { useTranslation } from '../i18n'
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
+import { Header } from './components/Header'
+import { Footer } from './components/Footer'
 import { Button } from '@mui/material'
 
 export async function generateMetadata({ params: { lng } }) {
