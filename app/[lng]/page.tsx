@@ -5,19 +5,21 @@ import { useTranslation } from '../i18n'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { Button } from '@mui/material'
+import { ThemeUpdater } from '../helpers/ThemeUpdater'
+import { ThemeBar } from './components/Organisms/ThemeBar/ThemeBar'
 
 export async function generateMetadata({ params: { lng } }) {
   const { t } = await useTranslation(lng)
   return { title: t('h1') }
 }
 
-export default async function Page({ params: { lng } }) {
+export default async function Page({ params: { lng }, props}) {
   if (languages.indexOf(lng) < 0) lng = fallbackLng
   const { t } = await useTranslation(lng)
 
   return (
     <>
-      <main>
+      <main><ThemeBar {...props} />
         <Header heading={t('h1')} />
         <h2>
           <Trans t={t} i18nKey="welcome">
