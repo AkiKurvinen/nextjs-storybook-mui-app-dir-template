@@ -1,5 +1,3 @@
-import './global.css'
-
 import { dir } from 'i18next'
 import { languages } from '../i18n/settings'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
