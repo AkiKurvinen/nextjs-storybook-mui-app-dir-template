@@ -5,13 +5,16 @@ import { useTranslation } from '../../i18n/client'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer/client'
 import { useState } from 'react'
+import { NavController } from '../components/Organisms/Nav/NavController'
+import { ThemeBar } from '../components/Organisms/ThemeBar/ThemeBar'
 
-export default function Page({ params: { lng } }) {
+export default function Page({ params: { lng }, ...props }) {
   const { t } = useTranslation(lng, 'client-page')
   const [counter, setCounter] = useState(0)
   return (
     <>
-      <main>
+      <main>      <NavController lng={lng} path={'/'} {...props} />
+      <ThemeBar {...props} />
         <Header heading={t('h1')} />
         <p>{t('counter', { count: counter })}</p>
         <div>
