@@ -7,6 +7,7 @@ import { Footer } from './components/Footer'
 import { Button } from '@mui/material'
 import { ThemeUpdater } from '../helpers/ThemeUpdater'
 import { ThemeBar } from './components/Organisms/ThemeBar/ThemeBar'
+import { NavController } from './components/Organisms/Nav/NavController'
 
 export async function generateMetadata({ params: { lng } }) {
   const { t } = await useTranslation(lng)
@@ -19,7 +20,9 @@ export default async function Page({ params: { lng }, props}) {
 
   return (
     <>
-      <main><ThemeBar {...props} />
+      <main>
+      <NavController lng={lng} path={'/'} {...props} />
+      <ThemeBar {...props} />
         <Header heading={t('h1')} />
         <h2>
           <Trans t={t} i18nKey="welcome">
