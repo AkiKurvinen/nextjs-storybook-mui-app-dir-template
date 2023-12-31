@@ -1,9 +1,9 @@
-import { dir } from 'i18next'
-import { languages } from '../i18n/settings'
+import { dir } from 'i18next';
+import { languages } from '../i18n/settings';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider, THEME_ID, createTheme } from '@mui/material/styles';
-import {Theme} from '@mui/material'
-import {dark} from '../../themes/all_themes'
+import { Theme } from '@mui/material';
+import { dark } from '../../themes/all_themes';
 import MUIThemeProvider from '../helpers/MUIThemeProvider';
 import PageProvider from '../helpers/PageProvider';
 
@@ -16,18 +16,16 @@ const raleway = Raleway({
 });
 
 export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }))
+  return languages.map((lng) => ({ lng }));
 }
 
 export default function RootLayout({
   children,
   emotionStyleTags,
   emotionCache,
-  params: {
-    lng
-  }
+  params: { lng },
 }) {
-  return ( 
+  return (
     <html lang={lng} dir={dir(lng)}>
       <head>
         {/* PWA primary color */}
@@ -46,12 +44,10 @@ export default function RootLayout({
         {emotionStyleTags}
       </head>
       <body>
-      <div className={raleway.className}>
-    <PageProvider emotionCache={emotionCache}>
-    {children}
-    </PageProvider>
-  </div>
+        <div className={raleway.className}>
+          <PageProvider emotionCache={emotionCache}>{children}</PageProvider>
+        </div>
       </body>
     </html>
-  )
+  );
 }

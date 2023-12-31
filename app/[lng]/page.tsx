@@ -1,58 +1,35 @@
-import Link from 'next/link'
-import { Trans } from 'react-i18next/TransWithoutContext'
-import { languages, fallbackLng } from '../i18n/settings'
-import { useTranslation } from '../i18n'
-import { Header } from './components/Header'
-import { Footer } from './components/Footer'
-import { Button } from '@mui/material'
-import { ThemeUpdater } from '../helpers/ThemeUpdater'
-import { ThemeBar } from './components/Organisms/ThemeBar/ThemeBar'
-import { NavController } from './components/Organisms/Nav/NavController'
+import { PrimaryPage } from '../components/templates/PrimaryPage/PrimaryPage';
+import { languages, fallbackLng } from '../i18n/settings';
+import { useTranslation } from '../i18n';
+import { StockPanelController } from '../components/organisms/StockPanel/StockPanelController';
+import { Footer } from '../components/organisms/Footer/Footer';
+import { WeatherWidget } from '../components/organisms/WeatherWidget/WeatherWidget';
+import { NavController } from '../components/organisms/Nav/NavController';
 
 export async function generateMetadata({ params: { lng } }) {
-  const { t } = await useTranslation(lng)
-  return { title: t('h1') }
+  const { t } = await useTranslation(lng);
+  return { title: t('h1') };
 }
 
-export default async function Page({ params: { lng }, props}) {
+export default async function Page({ params: { lng }, props }) {
+  // const [admin, setAdmin] = useState(false);
+
   if (languages.indexOf(lng) < 0) lng = fallbackLng
   const { t } = await useTranslation(lng)
 
   return (
-    <>
-      <main>
+    <PrimaryPage
+      nav={
+        <>
       <NavController lng={lng} path={'/'} {...props} />
-      <ThemeBar {...props} />
-        <Header heading={t('h1')} />
-        <h2>
-          <Trans t={t} i18nKey="welcome">
-            Welcome to Next.js v13 <small>appDir</small> and i18next
-          </Trans>
-        </h2>
-        <div style={{ width: '100%' }}>
-          <p>
-            <Trans t={t} i18nKey="blog.text">
-              Check out the corresponding <a href={t('blog.link')}>blog post</a> describing this example.
-            </Trans>
-          </p>
-          <a href={t('blog.link')}>
-            <img
-              style={{ width: '50%' }}
-              src="https://locize.com/blog/next-app-dir-i18n/next-app-dir-i18n.jpg"
-            />
-          </a>
-        </div>
-        <hr style={{ marginTop: 20, width: '90%' }} />
-        <div>
-          <Link href={`/${lng}/second-page`}>
-            <Button type="button">{t('to-second-page')}</Button>
-          </Link>
-          <Link href={`/${lng}/client-page`}>
-            <Button type="button">{t('to-client-page')}</Button>
-          </Link>
-        </div>
-      </main>
-      <Footer lng={lng} path={undefined}/>
-    </>
-  )
+        </>
+      }
+      main={<StockPanelController admin={true} lng={''} path={'/'} />}
+      footer={
+        <Footer>
+          <WeatherWidget />
+        </Footer>
+      }
+    />
+  );
 }

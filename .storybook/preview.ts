@@ -39,7 +39,7 @@ const preview: Preview = {
       modes: chromaticThemeModes,
       diffThreshold: 0.063, // default 0.063
     },
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
 
     backgrounds: {
       values: [

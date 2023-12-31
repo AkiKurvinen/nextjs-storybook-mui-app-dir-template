@@ -1,13 +1,15 @@
 # Next.js 14 app directory with i18next, MUI & Storybook
+
 - Material UI (MUI)
 - Storybook
 - TypeScript
 - i18next locale routes
-- Export static site to subfolder 
+- Export static site to subfolder
 - GitHub deploy workflow (App & Storybook)
 - Theme switch toolbar
 
 ## TODO
+
 - Language switch toolbar
 - MUI theme from tokens
 - Images and SVG
@@ -25,8 +27,9 @@
   - Languages
   - Viewports
 
-*Based on:*
+_Based on:_
 [next-app-dir-i18next-example](https://github.com/i18next/next-app-dir-i18next-example)
+
 ## Next.js 13/1413/14 app directory feature in combination with i18next
 
 This example shows a basic way to use [i18next](https://www.i18next.com) (and [react-i18next](https://react.i18next.com)) in a [Next.js 13](https://beta.nextjs.org/) app with the new app directory features.
@@ -36,13 +39,11 @@ It shows i18next integration on some server side pages and some client side page
 
 There is also an example middleware with language detection and persistence via cookie.
 
-*This example has been created out of [this discussion](https://github.com/i18next/next-i18next/discussions/1993).*
+_This example has been created out of [this discussion](https://github.com/i18next/next-i18next/discussions/1993)._
 
 ## There's also a [blog post](https://locize.com/blog/next-app-dir-i18n) describing this with more detail information.
 
 [![](https://locize.com/blog/next-app-dir-i18n/next-app-dir-i18n.jpg)](https://locize.com/blog/next-app-dir-i18n)
-
-
 
 ### Static Side Generation (SSG)
 
@@ -57,10 +58,10 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     // Required:
-    appDir: true
-  }
-}
-module.exports = nextConfig
+    appDir: true,
+  },
+};
+module.exports = nextConfig;
 ```
 
 And the just run `npm run build` and you should see the out folder.
@@ -73,19 +74,19 @@ i.e.:
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charSet="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>redirect</title>
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/7.0.2/i18nextBrowserLanguageDetector.min.js"></script>
     <!-- <script src="https://unpkg.com/i18next-browser-languagedetector@7.0.2/dist/umd/i18nextBrowserLanguageDetector.min.js"></script> -->
     <script>
-      var lngDetector = new window.i18nextBrowserLanguageDetector()
-      var lng = lngDetector.detect()
-      if (lng.indexOf('it') === 0) window.location.href = './it/'
-      else if (lng.indexOf('de') === 0) window.location.href = './de/'
-      else window.location.href = './en/'
+      var lngDetector = new window.i18nextBrowserLanguageDetector();
+      var lng = lngDetector.detect();
+      if (lng.indexOf('it') === 0) window.location.href = './it/';
+      else if (lng.indexOf('de') === 0) window.location.href = './de/';
+      else window.location.href = './en/';
     </script>
   </body>
 </html>

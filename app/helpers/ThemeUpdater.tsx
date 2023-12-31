@@ -4,7 +4,7 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 import { MenuItem, Select, Theme, Typography } from '@mui/material';
 import { useTheme } from 'next-themes';
 import styled from '@emotion/styled';
-import React, { createContext } from "react";
+import React, { createContext } from 'react';
 interface IThemeUpdater {
   theme?: Theme;
   children?: ReactNode;
