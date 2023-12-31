@@ -5,10 +5,9 @@
 - i18next locale routes
 - Export static site to subfolder 
 - GitHub deploy workflow (App & Storybook)
+- Theme switch toolbar
 
 ## TODO
-
-- Theme switch toolbar
 - Language switch toolbar
 - MUI theme from tokens
 - Images and SVG
