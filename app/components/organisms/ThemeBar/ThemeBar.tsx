@@ -4,7 +4,8 @@ import { Theme } from '@mui/material';
 import Paper from '@mui/material/Paper';
 
 import { FC, ReactNode } from 'react';
-import { ThemeUpdater } from '../../../../helpers/ThemeUpdater';
+import { ThemeUpdater } from '../../../helpers/ThemeUpdater';
+
 
 
 interface IThemeBar {

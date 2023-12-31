@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { Trans } from 'react-i18next/TransWithoutContext'
 import { languages, fallbackLng } from '../i18n/settings'
 import { useTranslation } from '../i18n'
-import { Header } from './components/Header'
-import { Footer } from './components/Footer'
+import { Footer } from '../components/Footer'
 import { Button } from '@mui/material'
 import { ThemeUpdater } from '../helpers/ThemeUpdater'
-import { ThemeBar } from './components/Organisms/ThemeBar/ThemeBar'
-import { NavController } from './components/Organisms/Nav/NavController'
+import { ThemeBar } from '../components/Organisms/ThemeBar/ThemeBar'
+import { NavController } from '../components/Organisms/Nav/NavController'
+import { Header } from '../components/Header'
 
 export async function generateMetadata({ params: { lng } }) {
   const { t } = await useTranslation(lng)

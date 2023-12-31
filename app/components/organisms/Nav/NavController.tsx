@@ -1,6 +1,6 @@
 'use client'
 import { Nav } from './Nav';
-import Pear from '../../../../../public/img/svg/pear.svg';
+import Pear from '../../../../public/img/svg/pear.svg'
 import Link from 'next/link';
 import { useMediaQuery, useTheme } from '@mui/material';
 

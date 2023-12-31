@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import { useTranslation } from '../../i18n/client'
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer/client'
 import { useState } from 'react'
-import { NavController } from '../components/Organisms/Nav/NavController'
-import { ThemeBar } from '../components/Organisms/ThemeBar/ThemeBar'
+import { NavController } from '../../components/Organisms/Nav/NavController'
+import { ThemeBar } from '../../components/Organisms/ThemeBar/ThemeBar'
+import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
 
 export default function Page({ params: { lng }, ...props }) {
   const { t } = useTranslation(lng, 'client-page')
