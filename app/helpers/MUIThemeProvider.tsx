@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useTheme } from 'next-themes';
 import { CssBaseline, Theme, ThemeProvider } from '@mui/material';
 import { FC, useEffect, useState } from 'react';

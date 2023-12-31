@@ -1,3 +1,4 @@
+'use client';
 import styled from '@emotion/styled';
 import { Theme } from '@mui/material';
 import React from 'react';

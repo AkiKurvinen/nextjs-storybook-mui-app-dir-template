@@ -29,7 +29,11 @@ export const StyledSearchForm: FC<SearchFormProps> = ({
         ) : (
           <>
             <TextField label={textfieldlabel} onChange={props.handleKeywords} />
-            <Button variant='contained' onClick={props.handleSearch} endIcon={<SearchIcon/>}>
+            <Button
+              variant='contained'
+              onClick={props.handleSearch}
+              endIcon={<SearchIcon />}
+            >
               {buttonlabel}
             </Button>
           </>
@@ -43,7 +47,7 @@ export const SearchForm = styled(StyledSearchForm)`
   width: fit-content;
   width: -moz-fit-content;
   margin-left: 1em;
-  input{
+  input {
     width: 200px;
   }
   div {

@@ -1,12 +1,10 @@
-'use client'
+'use client';
 import styled from '@emotion/styled';
 import { Theme } from '@mui/material';
 import Paper from '@mui/material/Paper';
 
 import { FC, ReactNode } from 'react';
 import { ThemeUpdater } from '../../../helpers/ThemeUpdater';
-
-
 
 interface IThemeBar {
   theme?: Theme;

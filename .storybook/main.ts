@@ -4,7 +4,7 @@ const config: StorybookConfig = {
   stories: [
     '../app/**/*.mdx',
     '../app/**/*.stories.@(js|jsx|ts|tsx)',
-    "../app/[lng]/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    '../app/[lng]/components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   features: {
     buildStoriesJson: true,

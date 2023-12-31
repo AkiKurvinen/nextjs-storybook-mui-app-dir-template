@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { ThemeProvider as PreferredThemeProvider } from 'next-themes';
 import Head from 'next/head';

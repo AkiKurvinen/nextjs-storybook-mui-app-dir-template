@@ -1,14 +1,13 @@
-'use client'
-import { Nav } from './Nav';
-import Pear from '../../../../public/img/svg/pear.svg'
+'use client';
+
+import Pear from '../../../../public/img/svg/pear.svg';
 import Link from 'next/link';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-import { LangNav } from '../LangNav/LangNav';
 import { useState } from 'react';
-import { SearchForm } from '../../Molecules/SearchForm/SearchForm';
-
-export const NavController = (props:any) => {
+import { Nav } from './Nav';
+import { LangNav } from '../LangNav/LangNav';
+export const NavController = (props: any) => {
   const [keywords, setKeywords] = useState('');
   const theme = useTheme();
 
@@ -32,7 +31,7 @@ export const NavController = (props:any) => {
       }
       search={
         <p>search</p>
-   /*     <SearchForm
+        /*     <SearchForm
           onlyicon={isExtraSmallSize}
           handleSearch={handleSearch}
           handleKeywords={handleKeywords}
@@ -43,7 +42,7 @@ export const NavController = (props:any) => {
     >
       <LangNav {...props} />
       <Link href={{ pathname: 'nav.stock.route', query: 'query' }}>
-      'nav.stock.text'
+        'nav.stock.text'
       </Link>
       <Link href={{ pathname: 'nav.admin.route', query: 'query' }}>
         'nav.admin.text'

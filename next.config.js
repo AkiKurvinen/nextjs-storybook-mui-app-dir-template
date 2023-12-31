@@ -8,7 +8,7 @@ const nextConfig = {
   trailingSlash: true,
   compiler: {
     emotion: true,
-  }, 
+  },
   images: {
     loader: 'akamai',
     path: '',
@@ -34,6 +34,6 @@ const nextConfig = {
   //   // Required: for next 13
   //   appDir: true
   // }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

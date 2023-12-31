@@ -1,12 +1,15 @@
+'use client';
 import { FC, useEffect, useState } from 'react';
 import { Theme, Typography } from '@mui/material';
 import { stock_mock_data } from './mock_data';
 import { StockPanelSkeleton, StockPanelView } from './StockPanelView';
-import { useTranslation, useLanguageQuery } from 'next-export-i18n';
+import { useTranslation } from '../../../i18n/client';
 
 interface StockPanelControllerProps {
   theme?: Theme;
   admin?: boolean;
+  lng: string;
+  path: string;
 }
 
 export interface iItems {
@@ -19,16 +22,17 @@ export interface iItems {
 export interface iResponse {
   items: iItems;
 }
+//
 
-export const StockPanelController: FC<StockPanelControllerProps> = ({
+export const StockPanelController = ({
+  lng,
+  path,
   admin = false,
   ...props
 }: StockPanelControllerProps) => {
   const [data, setData] = useState<iResponse | null>(null);
   const [currentItem, setcurrentitem] = useState('placeholder');
   const [currentImage, setCurrentImage] = useState(currentItem);
-
-  const { t } = useTranslation();
 
   function setAll(name: string) {
     setcurrentitem(name);
@@ -76,6 +80,9 @@ export const StockPanelController: FC<StockPanelControllerProps> = ({
   const imageLoadErrorFun = () => {
     setCurrentImage('placeholder');
   };
+
+  const { t } = useTranslation(lng, 'footer');
+
   return (
     <>
       <Typography variant='h4' sx={{ textAlign: 'left' }}>

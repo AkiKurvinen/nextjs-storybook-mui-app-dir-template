@@ -1,3 +1,4 @@
+'use client';
 import { FC, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { Box, Skeleton, SkeletonProps, Theme, Typography } from '@mui/material';
