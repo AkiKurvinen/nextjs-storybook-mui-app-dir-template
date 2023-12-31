@@ -20,10 +20,7 @@ export async function generateStaticParams() {
 }
 
 export default function RootLayout({
-  children,
-  emotionStyleTags,
-  emotionCache,
-  params: { lng },
+ params:{lng},  children
 }) {
   return (
     <html lang={lng} dir={dir(lng)}>
@@ -41,11 +38,11 @@ export default function RootLayout({
           rel='preload'
           href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap'
         />
-        {emotionStyleTags}
+
       </head>
       <body>
         <div className={raleway.className}>
-          <PageProvider emotionCache={emotionCache}>{children}</PageProvider>
+          <PageProvider>{children}</PageProvider>
         </div>
       </body>
     </html>

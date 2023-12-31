@@ -16,7 +16,6 @@ interface LangNavProps {
   path: string;
 }
 const StyledLangNav: FC<LangNavProps> = ({ ...props }: LangNavProps) => {
-  console.log(props);
   return (
     <span {...props}>
       <Trans i18nKey='languageSwitcher' t={props.t}>
