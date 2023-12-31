@@ -4,7 +4,7 @@ import { useTranslation } from '../i18n';
 import { StockPanelController } from '../components/organisms/StockPanel/StockPanelController';
 import { Footer } from '../components/organisms/Footer/Footer';
 import { WeatherWidget } from '../components/organisms/WeatherWidget/WeatherWidget';
-import { NavController } from '../components/Organisms/Nav/NavController';
+import { NavController } from '../components/organisms/Nav/NavController';
 
 export async function generateMetadata({ params: { lng } }) {
   const { t } = await useTranslation(lng);
