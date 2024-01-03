@@ -19,9 +19,7 @@ export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
 
-export default function RootLayout({
- params:{lng},  children
-}) {
+export default function RootLayout({ params: { lng }, children }) {
   return (
     <html lang={lng} dir={dir(lng)}>
       <head>
@@ -38,7 +36,6 @@ export default function RootLayout({
           rel='preload'
           href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap'
         />
-
       </head>
       <body>
         <div className={raleway.className}>

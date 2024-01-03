@@ -12,18 +12,17 @@ export async function generateMetadata({ params: { lng } }) {
   return { title: t('h1') };
 }
 
-export default async function Page({ params: { lng , ...props }}) {
+export default async function Page({ params: { lng, ...props } }) {
   // const [admin, setAdmin] = useState(false);
 
-  if (languages.indexOf(lng) < 0) lng = fallbackLng
-
+  if (languages.indexOf(lng) < 0) lng = fallbackLng;
 
   return (
     <PrimaryPage
       nav={
         <>
-      <NavController lng={lng} path={'/'} {...props} />
-      <ThemeBar/>
+          <NavController lng={lng} path={'/'} {...props} />
+          <ThemeBar />
         </>
       }
       main={<StockPanelController admin={true} lng={lng} path={'/'} />}

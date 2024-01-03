@@ -18,7 +18,7 @@ const link_base = css`
   text-decoration: none;
 
   a {
-    padding: 1em 1.5em;
+    padding: 0.5em 1em;
     box-sizing: border-box;
     width: 100%;
   }

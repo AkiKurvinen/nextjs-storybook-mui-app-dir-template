@@ -81,19 +81,19 @@ export const StockPanelController = ({
     setCurrentImage('placeholder');
   };
 
-  const { t } = useTranslation(lng, 'footer');
+  const { t } = useTranslation(lng, 'stockpanel');
 
   return (
     <>
       <Typography variant='h4' sx={{ textAlign: 'left' }}>
-        {t('stockpanel.headline')}
+        {t('headline')}
       </Typography>
       {!data ? (
         <StockPanelSkeleton />
       ) : (
         <StockPanelView
-          listheadline={t('stockpanel.listheadline')}
-          previewheadline={t('stockpanel.previewheadline')}
+          listheadline={t('listheadline')}
+          previewheadline={t('previewheadline')}
           data={data}
           admin={admin}
           currentItem={currentItem}
