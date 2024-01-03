@@ -11,6 +11,7 @@ interface NavProps {
   search?: React.ReactNode;
   name?: string;
   theme?: Theme;
+
 }
 const nav_base = (theme: Theme) => css`
   position: -webkit-sticky;

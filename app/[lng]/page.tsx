@@ -16,7 +16,7 @@ export default async function Page({ params: { lng , ...props }}) {
   // const [admin, setAdmin] = useState(false);
 
   if (languages.indexOf(lng) < 0) lng = fallbackLng
-  const { t } = await useTranslation(lng)
+
 
   return (
     <PrimaryPage
@@ -26,7 +26,7 @@ export default async function Page({ params: { lng , ...props }}) {
       <ThemeBar/>
         </>
       }
-      main={<StockPanelController admin={true} lng={''} path={'/'} />}
+      main={<StockPanelController admin={true} lng={lng} path={'/'} />}
       footer={
         <Footer>
           <WeatherWidget />

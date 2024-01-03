@@ -3,14 +3,16 @@
 import Pear from '../../../../public/img/svg/pear.svg';
 import Link from 'next/link';
 import { useMediaQuery, useTheme } from '@mui/material';
+import { languages, fallbackLng } from '../../../i18n/settings';
 
 import { useState } from 'react';
 import { Nav } from './Nav';
 import { LangNav } from '../LangNav/LangNav';
+import { useTranslation } from '../../../i18n/client';
 export const NavController = (props: any) => {
   const [keywords, setKeywords] = useState('');
   const theme = useTheme();
-
+  const { t } = useTranslation(props.lng, 'client-page')
   const isExtraSmallSize = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleKeywords = (event: any) => {
@@ -26,7 +28,9 @@ export const NavController = (props: any) => {
       logo={
         <Link href={{ pathname: 'nav.index.route', query: 'query' }}>
           <Pear />
-          Fruity Oy
+          Fruity Oy        <Link href={`/${props.lng}/second-client-page`}>
+          {t('to-second-client-page')}
+        </Link>
         </Link>
       }
       search={
@@ -41,9 +45,10 @@ export const NavController = (props: any) => {
       }
     >
       <LangNav {...props} />
-      <Link href={{ pathname: 'nav.stock.route', query: 'query' }}>
-        'nav.stock.text'
-      </Link>
+
+            <Link href={`/${props.lng}/second-client-page`}>
+          {t('to-second-client-page')} (stock)
+        </Link>
       <Link href={{ pathname: 'nav.admin.route', query: 'query' }}>
         'nav.admin.text'
       </Link>

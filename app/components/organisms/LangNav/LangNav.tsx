@@ -19,7 +19,7 @@ const StyledLangNav: FC<LangNavProps> = ({ ...props }: LangNavProps) => {
   return (
     <span {...props}>
       <Trans i18nKey='languageSwitcher' t={props.t}>
-        Switch from <strong>{props.lng}</strong> to:{' '}
+        <strong>{props.lng}</strong>
       </Trans>
       {languages
         .filter((l) => props.lng !== l)
