@@ -1,10 +1,10 @@
 // custom converter
-import fs from 'fs';
-import { createTheme } from '@mui/material';
+import fs from "fs";
+import { createTheme } from "@mui/material";
 
-let importpath = './themes/tokens.json';
-let themename = 'light';
-let parentelement = 'Theme';
+let importpath = "./themes/tokens.json";
+let themename = "light";
+let parentelement = "Theme";
 
 const mui_base_typography = createTheme().typography;
 const args = process.argv.slice(2);
@@ -12,7 +12,7 @@ const args = process.argv.slice(2);
 if (args[0] && args[0].length > 0) {
   themename = args[0];
 }
-let exportfile = themename + '_theme';
+let exportfile = themename + "_theme";
 
 if (args[1] && args[1].length > 0) {
   exportfile = args[1];
@@ -27,16 +27,16 @@ if (args[3] && args[3].length > 0) {
 const json = JSON.parse(fs.readFileSync(importpath));
 
 function getActualValue(subelement, item) {
-  let itemi = item.replace('{', '').replace('}', '');
+  let itemi = item.replace("{", "").replace("}", "");
   let result = itemi
-    .split('.')
+    .split(".")
     .reduce((json, i) => json[i], json[`${parentelement}`]);
   if (result.value / 16) {
     let pxvalue = result.value / 16;
     return `${Math.round(pxvalue * 100) / 100}em`;
-  } else if (result.value == '0px' || result.value == '0') {
+  } else if (result.value == "0px" || result.value == "0") {
     result.value = 0;
-  } else if (subelement != 'fontFamily') {
+  } else if (subelement != "fontFamily") {
     result.value = result.value.toLowerCase();
   }
 
@@ -68,24 +68,24 @@ function getTokens() {
     });
     finalJsonTheme.palette = colorPalette;
   } else {
-    console.info('No theme palette for ' + themename);
+    console.info("No theme palette for " + themename);
   }
   let typography = mui_base_typography;
 
   try {
     typography.fontFamily = getActualValue(
-      'fontFamily',
+      "fontFamily",
       json[`${parentelement}`].typography[`${themename}`].body.value.fontFamily
     );
   } catch (error) {
-    console.info('No base font set');
+    console.info("No base font set");
   }
   if (json[`${parentelement}`].typography[`${themename}`]) {
     Object.keys(json[`${parentelement}`].typography[`${themename}`]).forEach(
       (element) => {
         let elementMuikey = element;
-        if (element == 'body') {
-          elementMuikey = 'body1';
+        if (element == "body") {
+          elementMuikey = "body1";
         }
         if (!typography[`${elementMuikey}`]) {
           typography[`${elementMuikey}`] = {};
@@ -108,13 +108,13 @@ function getTokens() {
     );
     finalJsonTheme.typography = typography;
   } else {
-    console.info('No theme typography for ' + themename);
+    console.info("No theme typography for " + themename);
   }
 
   const updatedJson = JSON.stringify(finalJsonTheme, null, 4);
   let jsonPretty = JSON.stringify(JSON.parse(updatedJson), null, 2);
   fs.writeFileSync(`./themes/${exportfile}.json`, jsonPretty);
-  console.log('Conversion completed!');
+  console.log("Conversion completed!");
 }
 
 getTokens();

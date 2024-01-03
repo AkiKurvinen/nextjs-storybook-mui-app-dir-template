@@ -1,10 +1,10 @@
-'use client';
-import styled from '@emotion/styled';
-import { Theme } from '@mui/material';
-import Paper from '@mui/material/Paper';
+"use client";
+import styled from "@emotion/styled";
+import { Theme } from "@mui/material";
+import Paper from "@mui/material/Paper";
 
-import { FC, ReactNode } from 'react';
-import { ThemeUpdater } from '../../../helpers/ThemeUpdater';
+import { FC, ReactNode } from "react";
+import { ThemeUpdater } from "../../../helpers/ThemeUpdater";
 
 interface IThemeBar {
   theme?: Theme;
@@ -29,7 +29,7 @@ export const ThemeBar = styled(unstyledThemeBar)`
   display: inline-block;
   box-sizing: border-box;
 
-  ${(props) => props.theme.breakpoints.down('sm')} {
+  ${(props) => props.theme.breakpoints.down("sm")} {
     min-width: unset;
     gap: unset;
     padding: 0.5em;

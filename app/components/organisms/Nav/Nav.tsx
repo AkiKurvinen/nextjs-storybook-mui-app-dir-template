@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { Theme } from '@mui/material';
+import React, { FC } from "react";
+import { Theme } from "@mui/material";
 
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import { NavItem } from '../../atoms/NavItem/NavItem';
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+import { NavItem } from "../../atoms/NavItem/NavItem";
 
 interface NavProps {
   logo?: React.ReactNode;
@@ -11,7 +11,6 @@ interface NavProps {
   search?: React.ReactNode;
   name?: string;
   theme?: Theme;
-
 }
 const nav_base = (theme: Theme) => css`
   position: -webkit-sticky;
@@ -128,21 +127,21 @@ const StyledNav: FC<NavProps> = ({
 
   return (
     <div {...props}>
-      <span className='logo'>{logo && logo}</span>
+      <span className="logo">{logo && logo}</span>
 
       {search && search}
 
       {!open ? (
-        <button className='burger' onClick={openMenu}>
+        <button className="burger" onClick={openMenu}>
           &equiv;
         </button>
       ) : (
-        <button className='burger' onClick={openMenu}>
+        <button className="burger" onClick={openMenu}>
           &times;
         </button>
       )}
 
-      <ul className={open ? 'expanded' : ''}>
+      <ul className={open ? "expanded" : ""}>
         {links && (
           <>
             {links.map((link, idx) => {
@@ -157,7 +156,7 @@ const StyledNav: FC<NavProps> = ({
 
 export const Nav = styled(StyledNav)`
   ${(props) => nav_base(props.theme)}
-  ${(props) => props.theme.breakpoints.down('md')} {
+  ${(props) => props.theme.breakpoints.down("md")} {
     ${(props) => mobile_styles(props.theme)}
   }
 `;

@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Nav } from './Nav';
-import { Link } from '@mui/material';
-import Pear from '../../../../public/img/svg/pear.svg';
-import { useTranslation } from '../../../i18n/client';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Nav } from "./Nav";
+import { Link } from "@mui/material";
+import Pear from "../../../../public/img/svg/pear.svg";
+import { useTranslation } from "../../../i18n/client";
 const meta: Meta<typeof Nav> = {
-  title: 'Components/Organisms/Nav',
+  title: "Components/Organisms/Nav",
   component: Nav,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 };
 
@@ -17,49 +17,56 @@ type Story = StoryObj<typeof Nav>;
 export const Default: Story = {
   args: {
     logo: (
-      <a href='#'>
+      <a href="#">
         <Pear />
-      Fruity Oy
+        Fruity Oy
       </a>
     ),
-    name: 'Fruity Oy',
+    name: "Fruity Oy",
     children: [
-      <Link key='1' href='/stock'>
+      <Link key="1" href="/stock">
         stock
       </Link>,
-      <Link key='2' href='/about'>
+      <Link key="2" href="/about">
         about
       </Link>,
-      <Link key='3' href='/contact'>
+      <Link key="3" href="/contact">
         contact
       </Link>,
     ],
   },
 };
 
-
 export const WithProp: Story = {
-
-  render: () => {  const { t } = useTranslation(undefined,'nav')
-  return (<Nav 
-      logo = {<a href='#'><Pear />{t('fruity-oy')}</a>}
-    
-    name= 'Fruity Oy'
-    children= {[
-      <Link key='1' href='/stock'>
-        stock
-      </Link>,
-      <Link key='2' href='/about'>
-        about
-      </Link>,
-      <Link key='3' href='/contact'>
-        contact
-      </Link>
-    ]}
-    />)},
+  render: () => {
+    const { t } = useTranslation(undefined, "nav");
+    return (
+      <Nav
+        logo={
+          <a href="#">
+            <Pear />
+            {t("fruity-oy")}
+          </a>
+        }
+        name="Fruity Oy"
+        children={[
+          <Link key="1" href="/stock">
+            stock
+          </Link>,
+          <Link key="2" href="/about">
+            about
+          </Link>,
+          <Link key="3" href="/contact">
+            contact
+          </Link>,
+        ]}
+      />
+    );
+  },
 };
 
 function ComponentUsingHook() {
-  const { t } = useTranslation(undefined,'client-page')
-  return <div>{t('to-second-client-page')}</div>;
-}export const UsingHook = () => <ComponentUsingHook />;
+  const { t } = useTranslation(undefined, "client-page");
+  return <div>{t("to-second-client-page")}</div>;
+}
+export const UsingHook = () => <ComponentUsingHook />;

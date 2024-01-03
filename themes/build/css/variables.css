@@ -24,7 +24,7 @@
   --palette-gold-primary-light: #f0cb52;
   --font-families-raleway: Raleway;
   --font-families-kalam: Kalam;
-  --font-families-courier-prime: 'Courier Prime';
+  --font-families-courier-prime: "Courier Prime";
   --line-heights-0: AUTO;
   --font-weights-raleway-0: 400;
   --font-weights-raleway-1: 700;
@@ -46,7 +46,7 @@
   --typography-gold-body: 400 14px / AUTO Kalam;
   --typography-gold-h1: 700 44px / AUTO Kalam;
   --typography-gold-h2: 700 48px / AUTO Kalam;
-  --typography-dark-body: 400 12px / AUTO 'Courier Prime';
+  --typography-dark-body: 400 12px / AUTO "Courier Prime";
   --text-case-none: none;
   --text-case-uppercase: uppercase;
   --text-decoration-none: none;

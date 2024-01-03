@@ -1,20 +1,8 @@
 {
-  "index": {
-    "text": "Home",
-    "route": "/"
-  },
-  "stock": {
-    "text": "Stock",
-    "route": "/"
-  },
-  "tokens": {
-    "text": "Tokens",
-    "route": "/tokens"
-  },
-  "admin": {
-    "text": "Admin",
-    "route": "/admin"
-  },
+  "index": "Home",
+  "stock": "Stock",
+  "tokens": "Tokens",
+  "admin": "Admin",
   "search": "Search",
   "keywords": "Keywords"
 }

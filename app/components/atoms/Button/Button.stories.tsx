@@ -1,27 +1,27 @@
-import { LoadingButton } from '@mui/lab';
-import { IconButton } from '@mui/material';
-import type { Meta, StoryObj } from '@storybook/react';
-import { ArrowForward } from '@mui/icons-material';
-import React from 'react';
+import { LoadingButton } from "@mui/lab";
+import { IconButton } from "@mui/material";
+import type { Meta, StoryObj } from "@storybook/react";
+import { ArrowForward } from "@mui/icons-material";
+import React from "react";
 
 const meta: Meta<typeof LoadingButton> = {
-  title: 'Components/Atoms/Button',
+  title: "Components/Atoms/Button",
   component: LoadingButton,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     design: {
-      type: 'figspec',
-      url: 'https://www.figma.com/file/XcEEa8xxSoDs7sANZKmZTV/TemplateDesignSystem?type=design&node-id=34-25',
+      type: "figspec",
+      url: "https://www.figma.com/file/XcEEa8xxSoDs7sANZKmZTV/TemplateDesignSystem?type=design&node-id=34-25",
       accessToken: process.env.STORYBOOK_FIGMA_ACCESS_TOKEN,
     },
   },
   argTypes: {
     endIcon: {
       control: {
-        type: 'select',
+        type: "select",
         options: {
-          ArrowForward: 'ArrowForward',
-          ArrowBack: 'ArrowBack',
+          ArrowForward: "ArrowForward",
+          ArrowBack: "ArrowBack",
         },
       },
     },
@@ -33,14 +33,14 @@ type Story = StoryObj<typeof LoadingButton>;
 
 export const Contained: Story = {
   args: {
-    children: ['Button'],
-    variant: 'contained',
+    children: ["Button"],
+    variant: "contained",
     endIcon: <ArrowForward />,
   },
   parameters: {
     design: {
-      type: 'figspec',
-      url: 'https://www.figma.com/file/XcEEa8xxSoDs7sANZKmZTV/TemplateDesignSystem?type=design&node-id=34-14&mode=dev',
+      type: "figspec",
+      url: "https://www.figma.com/file/XcEEa8xxSoDs7sANZKmZTV/TemplateDesignSystem?type=design&node-id=34-14&mode=dev",
       accessToken: process.env.STORYBOOK_FIGMA_ACCESS_TOKEN,
     },
   },
@@ -48,23 +48,23 @@ export const Contained: Story = {
 
 export const Outlined: Story = {
   args: {
-    children: ['Button'],
-    variant: 'outlined',
+    children: ["Button"],
+    variant: "outlined",
     endIcon: <ArrowForward />,
   },
 };
 
 export const Text: Story = {
   args: {
-    children: ['Button'],
-    variant: 'text',
+    children: ["Button"],
+    variant: "text",
     endIcon: <ArrowForward />,
   },
 };
 
 export const Icon: Story = {
   render: () => (
-    <IconButton color='primary'>
+    <IconButton color="primary">
       <ArrowForward />
     </IconButton>
   ),
@@ -72,14 +72,14 @@ export const Icon: Story = {
 
 export const Loading: Story = {
   args: {
-    children: ['Button'],
-    variant: 'contained',
+    children: ["Button"],
+    variant: "contained",
     loading: true,
   },
   parameters: {
     design: {
-      type: 'figspec',
-      url: 'https://www.figma.com/file/vnrByYRolXqdr2ui1oCHBU/Untitled?type=whiteboard&node-id=0%3A1&t=QAtVS7e2SaGmzmI4-1',
+      type: "figspec",
+      url: "https://www.figma.com/file/vnrByYRolXqdr2ui1oCHBU/Untitled?type=whiteboard&node-id=0%3A1&t=QAtVS7e2SaGmzmI4-1",
       accessToken: process.env.STORYBOOK_FIGMA_ACCESS_TOKEN,
     },
   },

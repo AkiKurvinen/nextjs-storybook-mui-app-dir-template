@@ -1,20 +1,8 @@
 {
-  "index": {
-    "text": "Etusivu",
-    "route": "/"
-  },
-  "stock": {
-    "text": "Varasto",
-    "route": "/"
-  },
-  "tokens": {
-    "text": "Tokenit",
-    "route": "/tokens"
-  },
-  "admin": {
-    "text": "Hallintapaneeli",
-    "route": "/admin"
-  },
+  "index": "Etusivu",
+  "stock": "Varasto",
+  "tokens": "Tokenit",
+  "admin": "Hallintapaneeli",
   "search": "Hae",
   "keywords": "Avainsanat"
 }

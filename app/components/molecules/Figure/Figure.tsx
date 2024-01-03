@@ -1,8 +1,8 @@
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import Image from 'next/image';
-import { Box, Skeleton, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+import Image from "next/image";
+import { Box, Skeleton, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
 
 const Figure_styles = () => css`
   margin: 0;
@@ -23,12 +23,12 @@ interface FigureProps {
   imageLoadError?: any;
 }
 export const FigureSkeleton = () => (
-  <Box sx={{ aspectRatio: '3 / 2' }}>
+  <Box sx={{ aspectRatio: "3 / 2" }}>
     <Skeleton
-      variant='rectangular'
-      animation='wave'
-      width={'100%'}
-      height={'100%'}
+      variant="rectangular"
+      animation="wave"
+      width={"100%"}
+      height={"100%"}
     />
   </Box>
 );
@@ -53,14 +53,14 @@ export const StyledFigure = ({
   return (
     <>
       <figure {...props}>
-        {overline && <Typography variant='body1'>{overline}</Typography>}
+        {overline && <Typography variant="body1">{overline}</Typography>}
 
         <Image
           src={currentImage}
           alt={alt}
           width={0}
           height={0}
-          sizes='100vw'
+          sizes="100vw"
           onError={() => imageLoadErrorFunc()}
           {...props}
         />

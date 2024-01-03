@@ -6,12 +6,12 @@ export const openweathermap_mock_data = {
   weather: [
     {
       id: 803,
-      main: 'Clouds',
-      description: 'broken clouds',
-      icon: '04d',
+      main: "Clouds",
+      description: "broken clouds",
+      icon: "04d",
     },
   ],
-  base: 'stations',
+  base: "stations",
   main: {
     temp: 8.22,
     feels_like: 6.92,
@@ -33,12 +33,12 @@ export const openweathermap_mock_data = {
   sys: {
     type: 2,
     id: 2011913,
-    country: 'FI',
+    country: "FI",
     sunrise: 1699163534,
     sunset: 1699193719,
   },
   timezone: 7200,
   id: 658225,
-  name: 'Helsinki',
+  name: "Helsinki",
   cod: 200,
 };

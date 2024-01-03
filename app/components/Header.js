@@ -9,4 +9,4 @@ export const Header = ({ heading }) => (
       <i className="typcn typcn-social-github-circular" />
     </a>
   </>
-)
+);

@@ -4,10 +4,10 @@ import {
   SkeletonProps,
   Theme,
   Typography,
-} from '@mui/material';
-import { FC } from 'react';
-import { HiExternalLink } from 'react-icons/hi';
-import styled from '@emotion/styled';
+} from "@mui/material";
+import { FC } from "react";
+import { HiExternalLink } from "react-icons/hi";
+import styled from "@emotion/styled";
 
 interface StockItemProps {
   label?: string;
@@ -17,15 +17,15 @@ interface StockItemProps {
   error?: boolean;
   isAdmin?: boolean;
   isOut?: string | undefined;
-  color?: 'primary' | 'secondary' | undefined;
+  color?: "primary" | "secondary" | undefined;
   setcurrentitem: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 export const StockItemSkeleton: FC<SkeletonProps> = ({ ...props }) => (
   <Skeleton
-    variant='rectangular'
-    animation='wave'
-    width={props.width ? props.width : '100%'}
+    variant="rectangular"
+    animation="wave"
+    width={props.width ? props.width : "100%"}
   >
     <li>
       <p>StockItem</p>
@@ -38,7 +38,7 @@ const UnstyledStockItem: FC<StockItemProps> = ({
   amount,
   isAdmin,
   isOut,
-  color = 'primary',
+  color = "primary",
   ...props
 }: StockItemProps) => {
   // Cases for Storybook demo:
@@ -53,18 +53,18 @@ const UnstyledStockItem: FC<StockItemProps> = ({
         props.setcurrentitem(label);
       }}
     >
-      <Typography variant='body1' sx={{ margin: 0, padding: 0 }}>
+      <Typography variant="body1" sx={{ margin: 0, padding: 0 }}>
         {label}
       </Typography>
       <Typography
-        variant='body1'
-        sx={{ margin: 0, padding: 0, fontWeight: 'bold' }}
+        variant="body1"
+        sx={{ margin: 0, padding: 0, fontWeight: "bold" }}
       >
-        {isOut ? isOut : amount ? amount : 'N/A'}
+        {isOut ? isOut : amount ? amount : "N/A"}
       </Typography>
       {isAdmin && (
         <IconButton>
-          <HiExternalLink title='Make order' size={32} />
+          <HiExternalLink title="Make order" size={32} />
         </IconButton>
       )}
     </li>

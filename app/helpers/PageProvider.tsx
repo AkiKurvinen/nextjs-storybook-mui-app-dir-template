@@ -1,10 +1,10 @@
-'use client';
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import { ThemeProvider as PreferredThemeProvider } from 'next-themes';
-import Head from 'next/head';
-import { FC } from 'react';
-import { createEmotionCache } from '../createEmotionCache';
-import MUIThemeProvider from './MUIThemeProvider';
+"use client";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import { ThemeProvider as PreferredThemeProvider } from "next-themes";
+import Head from "next/head";
+import { FC } from "react";
+import { createEmotionCache } from "../createEmotionCache";
+import MUIThemeProvider from "./MUIThemeProvider";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -21,7 +21,7 @@ const PageProvider: FC<PageProviderProps> = ({
   <PreferredThemeProvider>
     <CacheProvider value={emotionCache}>
       <Head>
-        <meta name='viewport' content='initial-scale=1, width=device-width' />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <MUIThemeProvider>{children}</MUIThemeProvider>
     </CacheProvider>

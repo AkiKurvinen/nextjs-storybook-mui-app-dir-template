@@ -1,9 +1,9 @@
-import { createTheme } from '@mui/material/styles';
-import { set_all_fonts } from './_overrrideFonts';
+import { createTheme } from "@mui/material/styles";
+import { set_all_fonts } from "./_overrrideFonts";
 
-import light_theme from './light_theme.json';
-import dark_theme from './dark_theme.json';
-import gold_theme from './gold_theme.json';
+import light_theme from "./light_theme.json";
+import dark_theme from "./dark_theme.json";
+import gold_theme from "./gold_theme.json";
 
 import {
   Open_Sans,
@@ -11,40 +11,40 @@ import {
   Raleway,
   Courier_Prime,
   Cutive_Mono,
-} from 'next/font/google';
-import { set_families } from './_setFamliles';
+} from "next/font/google";
+import { set_families } from "./_setFamliles";
 
 const open_sans = Open_Sans({
-  weight: ['300', '400', '700', '800'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
+  weight: ["300", "400", "700", "800"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
 });
 
 const kalam = Kalam({
-  weight: ['300', '400', '700'],
-  style: ['normal'],
-  subsets: ['latin'],
+  weight: ["300", "400", "700"],
+  style: ["normal"],
+  subsets: ["latin"],
 });
 
 const raleway = Raleway({
-  weight: ['300', '400', '700'],
-  style: ['normal'],
-  subsets: ['latin'],
+  weight: ["300", "400", "700"],
+  style: ["normal"],
+  subsets: ["latin"],
 });
 
 const courier_prime = Courier_Prime({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
 });
 
 const cutive_mono = Cutive_Mono({
-  weight: ['400'],
-  style: ['normal'],
-  subsets: ['latin'],
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
 });
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface TypographyVariants {
     primary: React.CSSProperties;
     secondary: React.CSSProperties;
@@ -55,7 +55,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-declare module '@mui/material/Typography' {
+declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     primary: true;
     secondary: true;

@@ -1,35 +1,35 @@
-import type { StorybookConfig } from '@storybook/nextjs';
-import path from 'path';
+import type { StorybookConfig } from "@storybook/nextjs";
+import path from "path";
 const config: StorybookConfig = {
   stories: [
-    '../app/**/*.mdx',
-    '../app/**/*.stories.@(js|jsx|ts|tsx)',
-    '../app/[lng]/components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    "../app/**/*.mdx",
+    "../app/**/*.stories.@(js|jsx|ts|tsx)",
+    "../app/[lng]/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   features: {
     buildStoriesJson: true,
   },
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-styling',
-    '@storybook/addon-viewport',
-    '@storybook/addon-mdx-gfm',
-    '@storybook/addon-themes',
-    '@storybook/addon-a11y',
-    '@storybook/addon-designs',
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    "@storybook/addon-styling",
+    "@storybook/addon-viewport",
+    "@storybook/addon-mdx-gfm",
+    "@storybook/addon-themes",
+    "@storybook/addon-a11y",
+    "@storybook/addon-designs",
   ],
   framework: {
-    name: '@storybook/nextjs',
+    name: "@storybook/nextjs",
     options: {
-      nextConfigPath: path.resolve(__dirname, '../next.config.js'),
+      nextConfigPath: path.resolve(__dirname, "../next.config.js"),
     },
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: "tag",
   },
-  staticDirs: ['../public'],
+  staticDirs: ["../public"],
   webpackFinal: async (config) => {
     const imageRule = config.module?.rules?.find((rule) => {
       const test = (rule as { test: RegExp }).test;
@@ -38,14 +38,14 @@ const config: StorybookConfig = {
         return false;
       }
 
-      return test.test('.svg');
+      return test.test(".svg");
     }) as { [key: string]: any };
 
     imageRule.exclude = /\.svg$/;
 
     config.module?.rules?.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
+      use: ["@svgr/webpack"],
     });
 
     return config;

@@ -1,6 +1,6 @@
-'use client';
-import styled from '@emotion/styled';
-import { Theme } from '@mui/material';
+"use client";
+import styled from "@emotion/styled";
+import { Theme } from "@mui/material";
 
 type SectionProps = {
   id?: string;
@@ -13,7 +13,7 @@ type SectionProps = {
 const unstyledFooter = ({ children, ...props }: SectionProps) => {
   return (
     <div {...props}>
-      <div className='content'>
+      <div className="content">
         <p>
           Atomic Design System, Figma Tokens, Next.js, Storybook, Emotion, MUI,
           Chromatic example in TypeScript 2023
@@ -42,7 +42,7 @@ export const Footer = styled(unstyledFooter)`
     grid-template-columns: 1fr 1fr;
   }
 
-  ${(props) => props.theme.breakpoints.down('sm')} {
+  ${(props) => props.theme.breakpoints.down("sm")} {
     width: 100vw;
     box-sizing: border-box;
     .content {

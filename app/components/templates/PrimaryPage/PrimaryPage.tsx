@@ -1,7 +1,7 @@
-'use client';
-import styled from '@emotion/styled';
-import { Theme } from '@mui/material';
-import React from 'react';
+"use client";
+import styled from "@emotion/styled";
+import { Theme } from "@mui/material";
+import React from "react";
 
 type TemplateProps = {
   nav?: React.ReactNode;
@@ -15,7 +15,7 @@ type TemplateProps = {
 
 const unstyledPrimaryPage = ({ ...props }: TemplateProps) => {
   return (
-    <div id='container' {...props}>
+    <div id="container" {...props}>
       {props.children ? ( // if children are passed, override template
         props.children // else render elements to their slots
       ) : (
@@ -51,9 +51,9 @@ export const PrimaryPage = styled(unstyledPrimaryPage)`
   grid-template-rows: auto 1fr auto;
   grid-auto-flow: column;
   grid-template-areas:
-    'nav'
-    'main'
-    'footer';
+    "nav"
+    "main"
+    "footer";
 
   nav {
     grid-area: nav;
@@ -67,12 +67,12 @@ export const PrimaryPage = styled(unstyledPrimaryPage)`
   main {
     grid-area: main;
     display: grid;
-    grid-template-areas: 'article ${(props) => props.aside && 'aside'}';
-    grid-template-columns: 2fr ${(props) => props.aside && '1fr'};
+    grid-template-areas: "article ${(props) => props.aside && "aside"}";
+    grid-template-columns: 2fr ${(props) => props.aside && "1fr"};
     grid-template-rows: auto;
     height: 100%;
     width: 100%;
-    gap: ${(props) => props.aside && '2em'};
+    gap: ${(props) => props.aside && "2em"};
     padding: 2em;
     max-width: ${(props) => props.theme.breakpoints.values.md}px;
   }
@@ -88,11 +88,11 @@ export const PrimaryPage = styled(unstyledPrimaryPage)`
     height: auto;
   }
 
-  ${(props) => props.theme.breakpoints.down('sm')} {
+  ${(props) => props.theme.breakpoints.down("sm")} {
     main {
       grid-template-areas:
-        'article'
-        'aside';
+        "article"
+        "aside";
       grid-template-columns: 1fr;
     }
   }

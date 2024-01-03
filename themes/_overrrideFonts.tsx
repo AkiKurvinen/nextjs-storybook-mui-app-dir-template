@@ -1,4 +1,4 @@
-import { NextFont } from 'next/dist/compiled/@next/font';
+import { NextFont } from "next/dist/compiled/@next/font";
 
 export const set_all_fonts = (baseFont: NextFont, theme: any) => {
   return {

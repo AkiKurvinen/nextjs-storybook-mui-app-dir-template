@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { Trans } from 'react-i18next/TransWithoutContext';
-import { MenuItem, Select, Theme, Typography } from '@mui/material';
-import { FC } from 'react';
-import styled from '@emotion/styled';
-import { languages } from '../../../i18n/settings';
+import Link from "next/link";
+import { Trans } from "react-i18next/TransWithoutContext";
+import { MenuItem, Select, Theme, Typography } from "@mui/material";
+import { FC } from "react";
+import styled from "@emotion/styled";
+import { languages } from "../../../i18n/settings";
 
 interface LangNavProps {
   logo?: React.ReactNode;
@@ -18,7 +18,7 @@ interface LangNavProps {
 const StyledLangNav: FC<LangNavProps> = ({ ...props }: LangNavProps) => {
   return (
     <span {...props}>
-      <Trans i18nKey='languageSwitcher' t={props.t}>
+      <Trans i18nKey="languageSwitcher" t={props.t}>
         <strong>{props.lng}</strong>
       </Trans>
       {languages
