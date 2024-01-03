@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Figure, FigureSkeleton } from "./Figure";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Figure, FigureSkeleton } from './Figure';
 
 const meta: Meta<typeof Figure> = {
-  title: "Components/Molecules/Figure",
+  title: 'Components/Molecules/Figure',
   component: Figure,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -15,16 +15,16 @@ type Story = StoryObj<typeof Figure>;
 
 export const WithFigcaption: Story = {
   args: {
-    src: "./img/apples.jpg",
-    alt: "Picture of apples",
-    figcaption: "Picture of apples",
+    src: './img/apples.jpg',
+    alt: 'Picture of apples',
+    figcaption: 'Picture of apples',
   },
 };
 
 export const WithoutFigcaption: Story = {
   args: {
-    src: "./img/apples.jpg",
-    alt: "Picture of apples",
+    src: './img/apples.jpg',
+    alt: 'Picture of apples',
   },
 };
 
@@ -36,7 +36,7 @@ export const Loading: Story = {
 
 export const MissingImage: Story = {
   args: {
-    src: "./img/failed.jpg",
-    alt: "Picture of apples",
+    src: './img/failed.jpg',
+    alt: 'Picture of apples',
   },
 };

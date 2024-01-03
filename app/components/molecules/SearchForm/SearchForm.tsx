@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
-import { Search } from "@mui/icons-material";
-import { Button, IconButton, TextField, Theme } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import { FC } from "react";
+import styled from '@emotion/styled';
+import { Search } from '@mui/icons-material';
+import { Button, IconButton, TextField, Theme } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import { FC } from 'react';
 
 interface SearchFormProps {
   textfieldlabel?: string;
@@ -13,24 +13,24 @@ interface SearchFormProps {
   handleKeywords?: any;
 }
 export const StyledSearchForm: FC<SearchFormProps> = ({
-  textfieldlabel = "Keywords",
-  buttonlabel = "Search",
+  textfieldlabel = 'Keywords',
+  buttonlabel = 'Search',
   onlyicon = false,
 
   ...props
 }: SearchFormProps) => {
   return (
     <form {...props}>
-      <div className="invertcolors">
+      <div className='invertcolors'>
         {onlyicon ? (
-          <IconButton className="onlyicon" onClick={props.handleSearch}>
+          <IconButton className='onlyicon' onClick={props.handleSearch}>
             <Search />
           </IconButton>
         ) : (
           <>
             <TextField label={textfieldlabel} onChange={props.handleKeywords} />
             <Button
-              variant="contained"
+              variant='contained'
               onClick={props.handleSearch}
               endIcon={<SearchIcon />}
             >
@@ -90,10 +90,10 @@ export const SearchForm = styled(StyledSearchForm)`
   label {
     top: -0.5em;
   }
-  label[data-shrink="true"] {
+  label[data-shrink='true'] {
     top: 0;
   }
-  ${(props) => props.theme.breakpoints.down("sm")} {
+  ${(props) => props.theme.breakpoints.down('sm')} {
     .onlyicon {
       position: absolute;
       right: 3em;

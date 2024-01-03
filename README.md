@@ -52,7 +52,7 @@ If you like to have all this hosted on a static server, you can add the `output:
 ```javascript
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: 'export',
   trailingSlash: true,
   reactStrictMode: true,
   swcMinify: true,
@@ -84,9 +84,9 @@ i.e.:
     <script>
       var lngDetector = new window.i18nextBrowserLanguageDetector();
       var lng = lngDetector.detect();
-      if (lng.indexOf("it") === 0) window.location.href = "./it/";
-      else if (lng.indexOf("de") === 0) window.location.href = "./de/";
-      else window.location.href = "./en/";
+      if (lng.indexOf('it') === 0) window.location.href = './it/';
+      else if (lng.indexOf('de') === 0) window.location.href = './de/';
+      else window.location.href = './en/';
     </script>
   </body>
 </html>

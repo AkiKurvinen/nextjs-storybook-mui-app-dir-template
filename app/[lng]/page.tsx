@@ -1,15 +1,15 @@
-import { PrimaryPage } from "../components/templates/PrimaryPage/PrimaryPage";
-import { languages, fallbackLng } from "../i18n/settings";
-import { useTranslation } from "../i18n";
-import { StockPanelController } from "../components/organisms/StockPanel/StockPanelController";
-import { Footer } from "../components/organisms/Footer/Footer";
-import { WeatherWidget } from "../components/organisms/WeatherWidget/WeatherWidget";
-import { NavController } from "../components/organisms/Nav/NavController";
-import { ThemeBar } from "../components/organisms/ThemeBar/ThemeBar";
+import { PrimaryPage } from '../components/templates/PrimaryPage/PrimaryPage';
+import { languages, fallbackLng } from '../i18n/settings';
+import { useTranslation } from '../i18n';
+import { StockPanelController } from '../components/organisms/StockPanel/StockPanelController';
+import { Footer } from '../components/organisms/Footer/Footer';
+import { WeatherWidget } from '../components/organisms/WeatherWidget/WeatherWidget';
+import { NavController } from '../components/organisms/Nav/NavController';
+import { ThemeBar } from '../components/organisms/ThemeBar/ThemeBar';
 
 export async function generateMetadata({ params: { lng } }) {
   const { t } = await useTranslation(lng);
-  return { title: t("h1") };
+  return { title: t('h1') };
 }
 
 export default async function Page({ params: { lng, ...props } }) {
@@ -21,11 +21,11 @@ export default async function Page({ params: { lng, ...props } }) {
     <PrimaryPage
       nav={
         <>
-          <NavController lng={lng} path={"/"} {...props} />
+          <NavController lng={lng} path={'/'} {...props} />
           <ThemeBar />
         </>
       }
-      main={<StockPanelController admin={true} lng={lng} path={"/"} />}
+      main={<StockPanelController admin={true} lng={lng} path={'/'} />}
       footer={
         <Footer>
           <WeatherWidget />

@@ -1,7 +1,7 @@
-import { FC } from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
+import { FC } from 'react';
+import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+import { Theme } from '@mui/material';
 
 interface LinkProps {
   children?: React.ReactNode;

@@ -1,9 +1,9 @@
-"use client";
-import { FC, useEffect, useState } from "react";
-import { Theme, Typography } from "@mui/material";
-import { stock_mock_data } from "./mock_data";
-import { StockPanelSkeleton, StockPanelView } from "./StockPanelView";
-import { useTranslation } from "../../../i18n/client";
+'use client';
+import { FC, useEffect, useState } from 'react';
+import { Theme, Typography } from '@mui/material';
+import { stock_mock_data } from './mock_data';
+import { StockPanelSkeleton, StockPanelView } from './StockPanelView';
+import { useTranslation } from '../../../i18n/client';
 
 interface StockPanelControllerProps {
   theme?: Theme;
@@ -31,7 +31,7 @@ export const StockPanelController = ({
   ...props
 }: StockPanelControllerProps) => {
   const [data, setData] = useState<iResponse | null>(null);
-  const [currentItem, setcurrentitem] = useState("placeholder");
+  const [currentItem, setcurrentitem] = useState('placeholder');
   const [currentImage, setCurrentImage] = useState(currentItem);
 
   function setAll(name: string) {
@@ -41,7 +41,7 @@ export const StockPanelController = ({
   useEffect(() => {
     data && Object.keys(data.items)[0]
       ? setAll(Object.keys(data.items)[0])
-      : setCurrentImage("placeholder");
+      : setCurrentImage('placeholder');
   }, [data]);
 
   useEffect(() => {
@@ -78,22 +78,22 @@ export const StockPanelController = ({
   }, []);
 
   const imageLoadErrorFun = () => {
-    setCurrentImage("placeholder");
+    setCurrentImage('placeholder');
   };
 
-  const { t } = useTranslation(lng, "stockpanel");
+  const { t } = useTranslation(lng, 'stockpanel');
 
   return (
     <>
-      <Typography variant="h4" sx={{ textAlign: "left" }}>
-        {t("headline")}
+      <Typography variant='h4' sx={{ textAlign: 'left' }}>
+        {t('headline')}
       </Typography>
       {!data ? (
         <StockPanelSkeleton />
       ) : (
         <StockPanelView
-          listheadline={t("listheadline")}
-          previewheadline={t("previewheadline")}
+          listheadline={t('listheadline')}
+          previewheadline={t('previewheadline')}
           data={data}
           admin={admin}
           currentItem={currentItem}

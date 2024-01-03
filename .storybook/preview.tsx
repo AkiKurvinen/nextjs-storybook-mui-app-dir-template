@@ -1,13 +1,13 @@
-import { Preview, ReactRenderer } from "@storybook/react";
-import { withThemeFromJSXProvider } from "@storybook/addon-themes";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { light, dark, muiDefault, muiGold } from "../themes/all_themes";
-import { chromaticThemeModes } from "./modes";
+import { Preview, ReactRenderer } from '@storybook/react';
+import { withThemeFromJSXProvider } from '@storybook/addon-themes';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { light, dark, muiDefault, muiGold } from '../themes/all_themes';
+import { chromaticThemeModes } from './modes';
 
-import React, { Suspense, useEffect } from "react";
-import { I18nextProvider } from "react-i18next";
-import i18n from "../app/i18n/i18n";
+import React, { Suspense, useEffect } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../app/i18n/i18n';
 
 const i18nextStoryDecorator = (Story, context) => {
   const { locale } = context.globals;
@@ -30,19 +30,19 @@ const i18nextStoryDecorator = (Story, context) => {
 };
 export const globalTypes = {
   locale: {
-    name: "Locale",
-    description: "Internationalization locale",
+    name: 'Locale',
+    description: 'Internationalization locale',
     toolbar: {
-      icon: "globe",
+      icon: 'globe',
       items: [
-        { value: "en", right: "🇺🇸", title: "English" },
-        { value: "fi", right: "🇫🇮", title: "Finland" },
+        { value: 'en', right: '🇺🇸', title: 'English' },
+        { value: 'fi', right: '🇫🇮', title: 'Finland' },
       ],
       showName: true,
     },
   },
 };
-i18n.on("languageChanged", (locale) => {
+i18n.on('languageChanged', (locale) => {
   const direction = i18n.dir(locale);
   document.dir = direction;
 });
@@ -56,7 +56,7 @@ export const decorators = [
       muiDefault: muiDefault,
       muiGold: muiGold,
     },
-    defaultTheme: "light",
+    defaultTheme: 'light',
     Provider: ThemeProvider,
     GlobalStyles: CssBaseline,
   }),
@@ -72,35 +72,35 @@ const preview: Preview = {
       viewports: {
         ...INITIAL_VIEWPORTS,
         desktop: {
-          name: "desktop",
-          styles: { width: "1920px", height: "1080px" },
+          name: 'desktop',
+          styles: { width: '1920px', height: '1080px' },
         },
-        mobile: { name: "mobile", styles: { width: "200px", height: "400px" } }, // Viewport width range [200, 2560]
-        defaultViewport: "responsive",
+        mobile: { name: 'mobile', styles: { width: '200px', height: '400px' } }, // Viewport width range [200, 2560]
+        defaultViewport: 'responsive',
       },
     },
     chromatic: {
       modes: chromaticThemeModes,
       diffThreshold: 0.063, // default 0.063
     },
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
 
     backgrounds: {
       values: [
         {
-          name: "light",
+          name: 'light',
           value: light.palette.background.paper,
         },
         {
-          name: "dark",
+          name: 'dark',
           value: dark.palette.background.paper,
         },
         {
-          name: "muiGold",
+          name: 'muiGold',
           value: muiGold.palette.background.paper,
         },
         {
-          name: "muiDefault",
+          name: 'muiDefault',
           value: muiDefault.palette.background.paper,
         },
       ],

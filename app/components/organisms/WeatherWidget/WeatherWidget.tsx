@@ -1,9 +1,9 @@
-"use client";
-import { FC, useEffect, useState } from "react";
-import styled from "@emotion/styled";
-import { Box, Skeleton, SkeletonProps, Theme, Typography } from "@mui/material";
-import { openweathermap_mock_data } from "./mock_data";
-import Image from "next/image";
+'use client';
+import { FC, useEffect, useState } from 'react';
+import styled from '@emotion/styled';
+import { Box, Skeleton, SkeletonProps, Theme, Typography } from '@mui/material';
+import { openweathermap_mock_data } from './mock_data';
+import Image from 'next/image';
 
 interface WeatherWidgetProps {
   theme?: Theme;
@@ -16,26 +16,26 @@ interface Resp {
 export const WeatherWidgetSkeleton: FC<SkeletonProps> = ({ ...props }) => (
   <Box
     sx={{
-      width: "100%",
-      maxWidth: "300px",
+      width: '100%',
+      maxWidth: '300px',
       height: 70,
-      display: "flex",
-      flexDirection: "column",
-      gap: "0.25em",
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '0.25em',
       flexGrow: 1,
     }}
   >
     <Skeleton
-      variant="rectangular"
-      animation="wave"
-      width={"100%"}
-      height={"100%"}
+      variant='rectangular'
+      animation='wave'
+      width={'100%'}
+      height={'100%'}
     />
     <Skeleton
-      variant="rectangular"
-      animation="wave"
-      width={"100%"}
-      height={"100%"}
+      variant='rectangular'
+      animation='wave'
+      width={'100%'}
+      height={'100%'}
     />
   </Box>
 );
@@ -73,7 +73,7 @@ const UnstyledWeatherWidget: FC<WeatherWidgetProps> = ({ ...props }: any) => {
 
   return (
     <Box {...props}>
-      <Typography sx={{ fontWeight: "bold" }}>
+      <Typography sx={{ fontWeight: 'bold' }}>
         Weather{data?.mock && <i>*</i>}
       </Typography>
 
@@ -81,7 +81,7 @@ const UnstyledWeatherWidget: FC<WeatherWidgetProps> = ({ ...props }: any) => {
         <WeatherWidgetSkeleton />
       ) : (
         <>
-          <p>{!data.error ? data?.name : "--"}</p>
+          <p>{!data.error ? data?.name : '--'}</p>
 
           {!data.error ? (
             <span>{data?.main.temp} &deg; C</span>
@@ -91,21 +91,21 @@ const UnstyledWeatherWidget: FC<WeatherWidgetProps> = ({ ...props }: any) => {
 
           {data?.mock ? (
             <Image
-              className="weatherimg"
+              className='weatherimg'
               src={`${
                 process.env.NEXT_PUBLIC_BASE_PATH &&
                 process.env.NEXT_PUBLIC_BASE_PATH
               }/img/04d.png`}
-              alt={"Cloudy"}
+              alt={'Cloudy'}
               width={50}
               height={50}
             ></Image>
           ) : (
             <Image
-              className="weatherimg"
+              className='weatherimg'
               src={`https://openweathermap.org/img/w/${data?.weather[0]?.icon}.png`}
               unoptimized
-              alt="Weather"
+              alt='Weather'
               width={50}
               height={50}
             />
@@ -130,7 +130,7 @@ export const WeatherWidget = styled(UnstyledWeatherWidget)`
     right: 1em;
     bottom: 1em;
   }
-  ${(props) => props.theme.breakpoints.down("sm")} {
+  ${(props) => props.theme.breakpoints.down('sm')} {
     width: 100%;
     max-width: unset;
   }
