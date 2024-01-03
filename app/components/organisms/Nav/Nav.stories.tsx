@@ -37,7 +37,7 @@ export const Default: Story = {
   },
 };
 
-export const WithProp: Story = {
+export const WithTranslation: Story = {
   render: () => {
     const { t } = useTranslation(undefined, "nav");
     return (
@@ -51,22 +51,16 @@ export const WithProp: Story = {
         name="Fruity Oy"
         children={[
           <Link key="1" href="/stock">
-            stock
+            {t("stock")}
           </Link>,
           <Link key="2" href="/about">
-            about
+            {t("admin")}
           </Link>,
           <Link key="3" href="/contact">
-            contact
+            {t("tokens")}
           </Link>,
         ]}
       />
     );
   },
 };
-
-function ComponentUsingHook() {
-  const { t } = useTranslation(undefined, "client-page");
-  return <div>{t("to-second-client-page")}</div>;
-}
-export const UsingHook = () => <ComponentUsingHook />;

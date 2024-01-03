@@ -19,7 +19,7 @@ const StyledLangNav: FC<LangNavProps> = ({ ...props }: LangNavProps) => {
   return (
     <span {...props}>
       <Trans i18nKey="languageSwitcher" t={props.t}>
-        <strong>{props.lng}</strong>
+      <span key='selected'> <strong>{props.lng}</strong></span> 
       </Trans>
       {languages
         .filter((l) => props.lng !== l)
@@ -37,13 +37,18 @@ const StyledLangNav: FC<LangNavProps> = ({ ...props }: LangNavProps) => {
 
 export const LangNav = styled(StyledLangNav)`
   color: ${(props) => props.theme.palette.background.paper};
+  span:last-child{
+    border-right: solid thin ${(props) => props.theme.palette.background.paper};
+  }
   span {
     color: ${(props) => props.theme.palette.primary.contrastText};
-    margin: 0 0.5em;
   }
   span:hover {
     text-decoration: underline;
     background-color: transparent;
     cursor: pointer;
+  }
+  span a{
+    margin: 0 0.5em;
   }
 `;
