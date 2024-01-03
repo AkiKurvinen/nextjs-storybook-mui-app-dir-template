@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Nav } from './Nav';
 import { Link } from '@mui/material';
 import Pear from '../../../../public/img/svg/pear.svg';
-
+import { useTranslation } from '../../../i18n/client';
 const meta: Meta<typeof Nav> = {
   title: 'Components/Organisms/Nav',
   component: Nav,
@@ -37,3 +37,7 @@ export const Default: Story = {
     ],
   },
 };
+function ComponentUsingHook() {
+  const { t } = useTranslation(undefined,'client-page')
+  return <div>          {t('to-second-client-page')}</div>;
+}export const UsingHook = () => <ComponentUsingHook />;
