@@ -1,0 +1,20 @@
+{
+  "index": {
+    "text": "Etusivu",
+    "route": "/"
+  },
+  "stock": {
+    "text": "Varasto",
+    "route": "/"
+  },
+  "tokens": {
+    "text": "Tokenit",
+    "route": "/tokens"
+  },
+  "admin": {
+    "text": "Hallintapaneeli",
+    "route": "/admin"
+  },
+  "search": "Hae",
+  "keywords": "Avainsanat"
+}

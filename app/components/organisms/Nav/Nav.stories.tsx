@@ -14,13 +14,12 @@ const meta: Meta<typeof Nav> = {
 
 export default meta;
 type Story = StoryObj<typeof Nav>;
-
 export const Default: Story = {
   args: {
     logo: (
       <a href='#'>
         <Pear />
-        Fruity Oy
+      Fruity Oy
       </a>
     ),
     name: 'Fruity Oy',
@@ -37,7 +36,30 @@ export const Default: Story = {
     ],
   },
 };
+
+
+export const WithProp: Story = {
+
+  render: () => {  const { t } = useTranslation(undefined,'nav')
+  return (<Nav 
+      logo = {<a href='#'><Pear />{t('fruity-oy')}</a>}
+    
+    name= 'Fruity Oy'
+    children= {[
+      <Link key='1' href='/stock'>
+        stock
+      </Link>,
+      <Link key='2' href='/about'>
+        about
+      </Link>,
+      <Link key='3' href='/contact'>
+        contact
+      </Link>
+    ]}
+    />)},
+};
+
 function ComponentUsingHook() {
   const { t } = useTranslation(undefined,'client-page')
-  return <div>          {t('to-second-client-page')}</div>;
+  return <div>{t('to-second-client-page')}</div>;
 }export const UsingHook = () => <ComponentUsingHook />;

@@ -12,7 +12,7 @@ import { useTranslation } from '../../../i18n/client';
 export const NavController = (props: any) => {
   const [keywords, setKeywords] = useState('');
   const theme = useTheme();
-  const { t } = useTranslation(props.lng, 'client-page')
+  const { t } = useTranslation(props.lng, 'nav')
   const isExtraSmallSize = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleKeywords = (event: any) => {
@@ -28,9 +28,7 @@ export const NavController = (props: any) => {
       logo={
         <Link href={{ pathname: 'nav.index.route', query: 'query' }}>
           <Pear />
-          Fruity Oy        <Link href={`/${props.lng}/second-client-page`}>
-          {t('to-second-client-page')}
-        </Link>
+          {t('fruity-oy')}
         </Link>
       }
       search={
