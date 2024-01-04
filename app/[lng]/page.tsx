@@ -25,7 +25,7 @@ export default async function Page({ params: { lng, ...props } }) {
           <ThemeBar />
         </>
       }
-      main={<StockPanelController admin={true} lng={lng} path={'/'} />}
+      main={<StockPanelController admin={false} lng={lng} path={'/'} />}
       footer={
         <Footer>
           <WeatherWidget />

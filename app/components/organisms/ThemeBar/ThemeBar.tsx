@@ -24,7 +24,7 @@ export const ThemeBar = styled(unstyledThemeBar)`
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 1;
   max-width: 900px;
   display: inline-block;
   box-sizing: border-box;
