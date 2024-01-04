@@ -7,87 +7,173 @@
 - Export static site to subfolder
 - GitHub deploy workflow (App & Storybook)
 - Theme switch toolbar
-
-## TODO
-
 - Language switch toolbar
+- *Storybook*
+  - Themes (MUI)
+  - Language switch
+  - Dynamic path in app by using .env
+## TODO
 - MUI theme from tokens
 - Images and SVG
   - Next/Image component usage
-  - Dynamic path in app by using .env
   - Also check images on Storybook
-- Storybook
-  - Themes (MUI)
-  - Language switch
+- *Storybook*
   - Viewports
   - (Figma designs embed)
   - (Accessibility addon)
-- Chromatic Story Modes
+- *Chromatic Story Modes*
   - Themes
   - Languages
   - Viewports
 
-_Based on:_
-[next-app-dir-i18next-example](https://github.com/i18next/next-app-dir-i18next-example)
+# Atomic Design System, Figma Tokens, Next.js, Storybook, Emotion, MUI, Chromatic example in TypeScript
 
-## Next.js 13/1413/14 app directory feature in combination with i18next
+## Tools and tech
+- Next.js
+- Storybook
+- TypeScript
+- Material UI
+- i18next
+- Emotion
+- Chromatic
+- Tokens Studio for Figma
 
-This example shows a basic way to use [i18next](https://www.i18next.com) (and [react-i18next](https://react.i18next.com)) in a [Next.js 13](https://beta.nextjs.org/) app with the new app directory features.
-[next-i18next](https://next.i18next.com) is not needed anymore for this setup.
+## Development (App & Storybook)
 
-It shows i18next integration on some server side pages and some client side pages.
-
-There is also an example middleware with language detection and persistence via cookie.
-
-_This example has been created out of [this discussion](https://github.com/i18next/next-i18next/discussions/1993)._
-
-## There's also a [blog post](https://locize.com/blog/next-app-dir-i18n) describing this with more detail information.
-
-[![](https://locize.com/blog/next-app-dir-i18n/next-app-dir-i18n.jpg)](https://locize.com/blog/next-app-dir-i18n)
-
-### Static Side Generation (SSG)
-
-If you like to have all this hosted on a static server, you can add the `output: 'export'` options and optionally the `trailingSlash: true` option:
-
-```javascript
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    // Required:
-    appDir: true,
-  },
-};
-module.exports = nextConfig;
+```bash
+npm install
+npm run dev
+npm run storybook
 ```
 
-And the just run `npm run build` and you should see the out folder.
+**next/image & Storybook basepath workaround:**
 
-Additionally, I recommend adding a root index.html file that detects the browser language and redirects to the corresponding sub-page.
-i.e.:
+- Create/modify .env file and set NEXT_PUBLIC_BASE_PATH to [spacebar] so it's not undefined
+- This also allows to run app in dev mode without subfolder in URL
 
-```html
-<!-- out/index.html -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>redirect</title>
-  </head>
-  <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/7.0.2/i18nextBrowserLanguageDetector.min.js"></script>
-    <!-- <script src="https://unpkg.com/i18next-browser-languagedetector@7.0.2/dist/umd/i18nextBrowserLanguageDetector.min.js"></script> -->
-    <script>
-      var lngDetector = new window.i18nextBrowserLanguageDetector();
-      var lng = lngDetector.detect();
-      if (lng.indexOf('it') === 0) window.location.href = './it/';
-      else if (lng.indexOf('de') === 0) window.location.href = './de/';
-      else window.location.href = './en/';
-    </script>
-  </body>
-</html>
+```bash
+NEXT_PUBLIC_BASE_PATH=
 ```
+
+## Deployment
+
+- Project is set to use Static Site Generation (SSG)
+- No cloud application platform needed
+- Run build command below and upload dist/ files to server
+- Also upload *index.html* from root dir that does the locale redirecting
+```bash
+npm run build
+```
+
+### Deployment: GitHub Pages
+
+- Activate workflow by uncommenting line 27 #jobs in .github\workflows\deploy.yml
+- Next.js app is deployed into GitHub Pages with locale (language) routes
+- Action creates copy of *index.html* in root folder that does the locale redirecting
+- Action also renders static copy of Storybook into */storybook* route
+- GitHub Pages most likely runs in subfolder so set .env basepath to repository name
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/github-repository-name
+```
+
+### Deployment: Subdirectory project (SSG)
+
+- When deploying app into subdirectory on server set base path in .env
+- Run normal build command above
+- Move contents of 'dist' folder into /anyappname/ folder on server
+- Site should be visible at yourdomain.com/anyappname
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/anyappname
+```
+
+## Deployment: Storybook
+
+- Run build command blow and move storybook-static to server
+
+```bash
+npm run build-storybook
+```
+
+## Code formatting
+
+```bash
+npm run format:fix
+```
+
+## VS Code plugins (recommended)
+
+- vscode-styled-components
+
+## Design tokens (optional integration)
+
+- Create Figma account
+- Create design file or use template below  
+  https://www.figma.com/community/file/1304079459895956066
+- Use Tokens Studio to generate tokens
+  - A: Link Tokens Studio to repository and push tokens.json
+  - B: Copy and paste tokens.json contents manually
+- Generate tokens in local repository
+
+**Custom converter**
+
+- Color palette, Fonts, Shadows (not implemented)
+- _Note: parent element is 'Theme'_
+- default args: light light_theme ./themes/tokens.json Theme
+  - arg 1: palette name in json file
+  - arg 2: destination json name
+  - arg 3: source json path
+  - arg 3: parent element
+
+```bash
+node themes/tools/muigen.mjs
+node themes/tools/muigen.mjs dark
+node themes/tools/muigen.mjs dark muitheme
+node themes/tools/muigen.mjs dark darkmuitheme ./themes/tokens.json
+node themes/tools/muigen.mjs dark darkmuitheme ./themes/tokens.json Theme
+```
+
+**Official Style Dictionary converter (not implemented in this project)**
+
+- tokens.json produced by Tokens Studio for Figma can't be used as it is
+- Official conversion tools available:
+  - @tokens-studio/sd-transform
+  - style-dictionary
+
+## Chromatic visual tests (optional integration)
+
+- Create Chromatic account
+- Get your token from chromatic.com/your_app ->  
+  Manage -> Configure -> Setup Chromatic with this project token
+
+```bash
+npx chromatic --project-token=your_token_goes_here
+```
+
+_or create .env file and add variable project-token=your_token_goes_here_
+
+```bash
+npm run chromatic
+```
+
+## Figma designs in Storybook (optional integration)
+
+- Embed Figma designs into Storybook with @storybook/addon-designs
+- Create Figma Access Token  
+  https://www.figma.com/developers/api#access-tokens
+- Create .env file to repository root
+- Add variable STORYBOOK_FIGMA_ACCESS_TOKEN=your_token_goes_here
+
+## Weather widget
+
+- Get API key from openweathermap.org
+- Create .env.local file to repository root
+- Add variable NEXT_PUBLIC_WEATHER_API_KEY=your_api_key_goes_here
+
+## Sources
+https://github.com/i18next/next-app-dir-i18next-example
+https://github.com/vercel/next.js/tree/canary/examples/with-emotion-swc  
+https://github.com/mui/material-ui/tree/master/examples/material-ui-nextjs-ts  
+https://codesandbox.io/s/nextjs-typescript-with-mui-material-and-next-themes-04z4m9  
+https://storybookjs.github.io/addon-designs/?path=/story/docs-figma-figspec-readme--page
