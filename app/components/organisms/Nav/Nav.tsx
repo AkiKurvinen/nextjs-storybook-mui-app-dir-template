@@ -97,6 +97,7 @@ const mobile_styles = (theme: Theme) => css`
     display: none;
   }
   ul li {
+    text-align: left;
     float: none;
     display: block; /* change to block */
   }

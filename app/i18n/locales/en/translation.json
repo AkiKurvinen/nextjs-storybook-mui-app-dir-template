@@ -1,5 +1,5 @@
 {
-  "h1": "A simple example",
-  "title": "Home",
-  "fruity-oy": "Fruity Inc."
+  "fruity-oy": "Fruity Inc.",
+  "index":{"title": "Next.js example"},
+  "admin":{"title": "Next.js example - admin"}
 }

@@ -1,5 +1,5 @@
 {
-  "h1": "Esimerkki",
-  "title": "Koti",
-  "fruity-oy": "Fruity Oy"
+  "fruity-oy": "Fruity Oy",
+  "index":{"title": "Next.js esimerkki"},
+  "admin":{"title": "Next.js esimerkki - hallinta"}
 }

@@ -54,4 +54,15 @@ export const LangNav = styled(StyledLangNav)`
   span a {
     margin: 0 0.5em;
   }
+  ${(props) => props.theme.breakpoints.down('md')} {
+    span a{
+      margin: 0;
+    }
+    span{
+      padding-left: 1em;
+    }
+    span:last-child{
+      border: none;
+    }
+  }
 `;

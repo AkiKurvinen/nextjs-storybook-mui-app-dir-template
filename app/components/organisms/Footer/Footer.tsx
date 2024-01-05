@@ -14,10 +14,7 @@ const unstyledFooter = ({ children, ...props }: SectionProps) => {
   return (
     <div {...props}>
       <div className='content'>
-        <p>
-          Atomic Design System, Figma Tokens, Next.js, Storybook, Emotion, MUI,
-          Chromatic example in TypeScript 2023
-        </p>
+        <p>Next.js 14 app directory with i18next, MUI, Storybook, Atomic Design & Chromatic example in TypeScript 2024</p>
         {children}
       </div>
     </div>

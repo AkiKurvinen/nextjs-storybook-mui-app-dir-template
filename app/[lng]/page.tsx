@@ -9,7 +9,7 @@ import { ThemeBar } from '../components/organisms/ThemeBar/ThemeBar';
 
 export async function generateMetadata({ params: { lng } }) {
   const { t } = await useTranslation(lng);
-  return { title: t('h1') };
+  return { title: t('index.title') };
 }
 
 export default async function Page({ params: { lng, ...props } }) {
@@ -25,7 +25,7 @@ export default async function Page({ params: { lng, ...props } }) {
           <ThemeBar />
         </>
       }
-      main={<StockPanelController admin={true} lng={lng} path={'/'} />}
+      main={<StockPanelController admin={false} lng={lng} path={'/'} />}
       footer={
         <Footer>
           <WeatherWidget />
