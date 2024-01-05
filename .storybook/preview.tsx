@@ -33,10 +33,12 @@ export const globalTypes = {
     name: 'Locale',
     description: 'Internationalization locale',
     toolbar: {
+      title: 'Locale',
+      dynamicTitle: true,
       icon: 'globe',
       items: [
-        { value: 'en', right: '🇺🇸', title: 'English' },
-        { value: 'fi', right: '🇫🇮', title: 'Finland' },
+        { value: 'en', right: '🇬🇧', title: 'English' },
+        { value: 'fi', right: '🇫🇮', title: 'Finnish' },
       ],
       showName: true,
     },
@@ -73,9 +75,9 @@ const preview: Preview = {
         ...INITIAL_VIEWPORTS,
         desktop: {
           name: 'desktop',
-          styles: { width: '1920px', height: '1080px' },
+          styles: { width: '1920px'},
         },
-        mobile: { name: 'mobile', styles: { width: '200px', height: '400px' } }, // Viewport width range [200, 2560]
+        mobile: { name: 'mobile', styles: { width: '360px' } }, // Viewport width range [200, 2560]
         defaultViewport: 'responsive',
       },
     },

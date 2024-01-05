@@ -3,18 +3,28 @@ import { Nav } from './Nav';
 import { Link } from '@mui/material';
 import Pear from '../../../../public/img/svg/pear.svg';
 import { useTranslation } from '../../../i18n/client';
+import { chromaticThemeDeviceModes } from '../../../../.storybook/modes';
 const meta: Meta<typeof Nav> = {
+  parameters: {
+    layout: 'fullscreen',
+    chromatic: { modes: chromaticThemeDeviceModes },
+    design: {
+      type: 'figspec',
+      url: 'https://www.figma.com/file/XcEEa8xxSoDs7sANZKmZTV/TemplateDesignSystem?type=design&node-id=48-1460',
+      accessToken: process.env.STORYBOOK_FIGMA_ACCESS_TOKEN,
+    },
+  },
   title: 'Components/Organisms/Nav',
   component: Nav,
   tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Nav>;
 export const Default: Story = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     logo: (
       <a href='#'>
@@ -38,6 +48,7 @@ export const Default: Story = {
 };
 
 export const WithTranslation: Story = {
+
   render: () => {
     const { t } = useTranslation(undefined, 'nav');
     return (

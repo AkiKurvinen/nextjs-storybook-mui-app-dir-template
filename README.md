@@ -12,6 +12,10 @@
   - Themes (MUI)
   - Language switch
   - Dynamic path in app by using .env
+- *Chromatic Story Modes*
+  - Themes
+  - Languages
+  - Viewports
 ## TODO
 - MUI theme from tokens
 - Images and SVG
@@ -21,10 +25,7 @@
   - Viewports
   - (Figma designs embed)
   - (Accessibility addon)
-- *Chromatic Story Modes*
-  - Themes
-  - Languages
-  - Viewports
+
 
 # Atomic Design System, Figma Tokens, Next.js, Storybook, Emotion, MUI, Chromatic example in TypeScript
 
