@@ -1,25 +1,16 @@
 'use client'
 import { Box, Button, Typography } from '@mui/material';
-import Link from 'next/link';
 import { PrimaryPage } from '../../components/templates/PrimaryPage/PrimaryPage';
 import { ThemeBar } from '../../components/organisms/ThemeBar/ThemeBar';
+import Link from 'next/link';
+import React from 'react'
 import { ColorGallery } from '../../../stories/ColorGallery';
 import { FontGallery } from '../../../stories/FontGallery';
 
-export interface iItems {
-  [key: string]: number | string | undefined;
-  Apples?: number;
-  Bananas?: number;
-  Oranges?: number;
-}
+export default function Page({ params: { lng, ...props } }) {
 
-export interface iResponse {
-  items: iItems;
-}
-
-export default function Tokens(props: any) {
   return (
-    <PrimaryPage
+   <PrimaryPage
       nav={
         <ThemeBar {...props}>
           <Link href='/en' passHref>
