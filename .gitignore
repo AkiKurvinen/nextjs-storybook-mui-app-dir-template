@@ -7,3 +7,4 @@ out/
 dist/
 .env
 .env.local
+build-storybook.log

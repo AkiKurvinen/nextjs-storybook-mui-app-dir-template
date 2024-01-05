@@ -3,9 +3,10 @@ import path from 'path';
 const config: StorybookConfig = {
   stories: [
     '../app/**/*.mdx',
-    '../stories/**/*.@(js|jsx|mjs|ts|tsx)',
     '../app/**/*.stories.@(js|jsx|ts|tsx)',
     '../app/[lng]/components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../stories/**/*.mdx',
   ],
   features: {
     buildStoriesJson: true,
