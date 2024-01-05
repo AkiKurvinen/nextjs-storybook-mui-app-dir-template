@@ -45,7 +45,7 @@ export const NavController = (props: any) => {
       <LangNav {...props} />
       <Link href={`/${props.lng}/`}>{t('stock')}</Link>
       <Link href={`/${props.lng}/admin`}>{t('admin')}</Link>
-      <Link href={`/${props.lng}/tokens`}>{t('tokens')}</Link>
+      <Link href={`/tokens`}>{t('tokens')}</Link>
       <Link href='/storybook'>Storybook</Link>
     </Nav>
   );
