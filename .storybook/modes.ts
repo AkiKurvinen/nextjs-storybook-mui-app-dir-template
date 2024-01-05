@@ -9,6 +9,14 @@ export const allModes = {
     theme: 'dark',
   },
 
+  // locale
+  en: {
+    locale: 'en',
+  },
+  fi: {
+    locale: 'fi',
+  },
+
   // theme + device
   'light desktop': {
     viewport: 'desktop',
@@ -31,13 +39,20 @@ export const allModes = {
     theme: 'dark',
   },
 
-  // locale
-  en: {
-    locale: 'en-GB',
+  // theme + device + locale
+  'light mobile en': {
+    viewport: 'mobile',
+    backgrounds: 'light',
+    theme: 'light',
+    locale: 'en',
   },
-  fi: {
-    viewport: 'fi-FI',
+  'dark desktop fi': {
+    viewport: 'desktop',
+    backgrounds: 'dark',
+    theme: 'dark',
+    locale: 'fi',
   },
+
 };
 
 // Chromatic Story Modes snap shot test matrix presets
@@ -45,6 +60,7 @@ export const chromaticThemeModes = {
   light: allModes['light'],
   dark: allModes['dark'],
 };
+
 export const chromaticThemeDeviceModes = {
   light_desktop: allModes['light desktop'],
   light_mobile: allModes['light mobile'],
@@ -54,8 +70,13 @@ export const chromaticThemeDeviceModes = {
   light: { disable: true },
   dark: { disable: true },
 };
-// not implemented
+
 export const chromaticLanguageModes = {
   english: allModes['en'],
   finnish: allModes['fi'],
 };
+
+export const chromaticThemeDeviceLangModes = {
+  light_mobile_english: allModes['light mobile en'],
+  dark_desktop_finnish: allModes['dark desktop fi'],
+}
