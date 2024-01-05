@@ -1,43 +1,35 @@
-# Next.js 14 app directory with i18next, MUI & Storybook
-
-- Material UI (MUI)
-- Storybook
-- TypeScript
-- i18next locale routes
-- Export static site to subfolder
-- GitHub deploy workflow (App & Storybook)
-- Theme switch toolbar
-- Language switch toolbar
-- *Storybook*
-  - Themes (MUI)
-  - Language switch
-  - Dynamic path in app by using .env
-- *Chromatic Story Modes*
-  - Themes
-  - Languages
-  - Viewports
-## TODO
-- MUI theme from tokens
-- Images and SVG
-  - Next/Image component usage
-  - Also check images on Storybook
-- *Storybook*
-  - Viewports
-  - (Figma designs embed)
-  - (Accessibility addon)
-
-
-# Atomic Design System, Figma Tokens, Next.js, Storybook, Emotion, MUI, Chromatic example in TypeScript
+# Next.js 14 app directory example with atomic design
 
 ## Tools and tech
 - Next.js
-- Storybook
 - TypeScript
-- Material UI
-- i18next
-- Emotion
+- Storybook
 - Chromatic
-- Tokens Studio for Figma
+- Material UI (MUI)
+  - Tokens Studio for Figma
+  - Generate MUI theme from tokens
+- i18next locale routes
+  
+- Emotion & Styled components
+- GitHub deploy workflow (App & Storybook)
+  - Export static site with locale routes
+- Theme switch toolbar (MUI)
+- Language switch toolbar (i18next)
+- *Storybook*
+  - Theme switch (MUI)
+  - Language switch
+  - Viewports addon
+  - Figma designs embed
+  - Accessibility addon
+  - Dynamic paths by using .env
+- *Chromatic Story Modes*
+  - Themes
+  - Viewports
+  - Languages
+- Images and SVG
+  - next/image component usage with .env path
+  - images and custom svg in Storybook
+
 
 ## Development (App)
 **next/image & Storybook basepath workaround:**
@@ -107,7 +99,6 @@ npm run format:fix
 ```
 
 ## VS Code plugins (recommended)
-
 - vscode-styled-components
 
 ## Design tokens (optional integration)
@@ -150,15 +141,10 @@ node themes/tools/muigen.mjs dark darkmuitheme ./themes/tokens.json Theme
 - Create Chromatic account
 - Get your token from chromatic.com/your_app ->  
   Manage -> Configure -> Setup Chromatic with this project token
+- Remember to reset NEXT_PUBLIC_BASE_PATH to empty
 
 ```bash
 npx chromatic --project-token=your_token_goes_here
-```
-
-_or create .env file and add variable project-token=your_token_goes_here_
-
-```bash
-npm run chromatic
 ```
 
 ## Figma designs in Storybook (optional integration)
