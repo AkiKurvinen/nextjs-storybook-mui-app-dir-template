@@ -75,7 +75,6 @@ npm run build
 - Action creates copy of *index.html* in root folder that does the locale redirecting
 - Action also renders static copy of Storybook into */storybook* route
 - GitHub Pages most likely runs in subfolder so set .env basepath to repository name
-
 ```bash
 NEXT_PUBLIC_BASE_PATH=/github-repository-name
 ```
@@ -86,7 +85,6 @@ NEXT_PUBLIC_BASE_PATH=/github-repository-name
 - Run normal build command above
 - Move contents of 'dist' folder into /anyappname/ folder on server
 - Site should be visible at yourdomain.com/anyappname
-
 ```bash
 NEXT_PUBLIC_BASE_PATH=/anyappname
 ```
