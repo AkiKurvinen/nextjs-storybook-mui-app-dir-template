@@ -9,7 +9,6 @@
   - Tokens Studio for Figma
   - Generate MUI theme from tokens
 - i18next locale routes
-  
 - Emotion & Styled components
 - GitHub deploy workflow (App & Storybook)
   - Export static site with locale routes
@@ -29,7 +28,6 @@
 - Images and SVG
   - next/image component usage with .env path
   - images and custom svg in Storybook
-
 
 ## Development (App)
 **next/image & Storybook basepath workaround:**
