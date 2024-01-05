@@ -8,8 +8,8 @@ import { NavController } from '../../components/organisms/Nav/NavController';
 import { ThemeBar } from '../../components/organisms/ThemeBar/ThemeBar';
 
 export async function generateMetadata({ params: { lng } }) {
-  const { t } = await useTranslation(lng);
-  return { title: t('h1') };
+  const { t } = await useTranslation(lng,);
+  return { title: t('admin.title') };
 }
 
 export default async function Page({ params: { lng, ...props } }) {

@@ -9,7 +9,7 @@ import { ThemeBar } from '../components/organisms/ThemeBar/ThemeBar';
 
 export async function generateMetadata({ params: { lng } }) {
   const { t } = await useTranslation(lng);
-  return { title: t('h1') };
+  return { title: t('index.title') };
 }
 
 export default async function Page({ params: { lng, ...props } }) {
