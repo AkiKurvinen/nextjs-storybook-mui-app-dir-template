@@ -158,7 +158,7 @@ npx chromatic --project-token=your_token_goes_here
 - Add variable NEXT_PUBLIC_WEATHER_API_KEY=your_api_key_goes_here
 
 ## Sources
-https://github.com/i18next/next-app-dir-i18next-example
+https://github.com/i18next/next-app-dir-i18next-example  
 https://github.com/vercel/next.js/tree/canary/examples/with-emotion-swc  
 https://github.com/mui/material-ui/tree/master/examples/material-ui-nextjs-ts  
 https://codesandbox.io/s/nextjs-typescript-with-mui-material-and-next-themes-04z4m9  
