@@ -29,6 +29,9 @@
   - next/image component usage with .env path
   - images and custom svg in Storybook
 
+## Architecture diagram
+[FigJam](https://www.figma.com/file/vnrByYRolXqdr2ui1oCHBU/Workflow?type=whiteboard&node-id=0-1&t=vHWcjchZgxGdLwVz-0)
+
 ## Development (App)
 **next/image & Storybook basepath workaround:**
 - Create/modify .env file and set NEXT_PUBLIC_BASE_PATH to empty/[spacebar]
