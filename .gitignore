@@ -5,6 +5,4 @@ node_modules
 .DS_Store
 out/
 dist/
-.env
-.env.local
 build-storybook.log
