@@ -34,7 +34,7 @@
 
 ## Development (App)
 **next/image & Storybook basepath workaround:**
-- Create/modify .env file and set NEXT_PUBLIC_BASE_PATH to empty/[spacebar]
+- Create/modify env-example file and set NEXT_PUBLIC_BASE_PATH to empty/[spacebar]
 - This also allows to run app in dev mode without subfolder in URL
 - Open locale route http://localhost:3000/en/ because root gives 404
 
